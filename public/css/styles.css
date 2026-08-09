@@ -39,6 +39,10 @@ a {
   color: inherit;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .wrap {
   width: min(calc(100% - 48px), var(--w));
   margin: auto;
@@ -67,9 +71,8 @@ a {
 }
 
 .brand-full {
-  width: auto;
-  max-width: 420px;
-  max-height: 58px;
+  width: 440px;
+  max-width: 38vw;
 }
 
 .brand-symbol {
@@ -97,6 +100,21 @@ a {
   border: 1px solid var(--gb);
   border-radius: 999px;
   color: var(--gold2) !important;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.header nav a:not(.pill) {
+  transition: color 0.18s ease;
+}
+
+.header nav a:not(.pill):hover {
+  color: var(--white);
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  background: rgba(201, 161, 74, 0.1);
+  border-color: var(--gold2);
 }
 
 /* =========================================
@@ -184,8 +202,16 @@ a {
 
   border-radius: 8px;
 
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
   font-weight: 700;
   text-decoration: none;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .primary {
@@ -195,8 +221,32 @@ a {
 }
 
 .secondary {
-  border: 1px solid var(--gb);
-  color: var(--gold2);
+  border: 1px solid rgba(226, 196, 117, 0.62);
+  background: rgba(201, 161, 74, 0.08);
+  color: #f2d889;
+}
+
+.primary:hover {
+  background: var(--gold2);
+  border-color: var(--gold2);
+  color: #08111c;
+  box-shadow: 0 7px 22px rgba(201, 161, 74, 0.16);
+}
+
+.secondary:hover {
+  background: rgba(226, 196, 117, 0.16);
+  border-color: var(--gold2);
+  color: var(--white);
+}
+
+.btn:focus-visible,
+.filters button:focus-visible,
+.text-button:focus-visible,
+.dialog-close:focus-visible,
+.header nav a:focus-visible,
+.profile-email:focus-visible {
+  outline: 3px solid var(--gold2);
+  outline-offset: 3px;
 }
 
 /* =========================================
@@ -221,6 +271,13 @@ a {
 
   color: var(--gold2);
   font-size: 2rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.stats .metric-unit {
+  color: inherit;
+  font-size: 0.68em;
   font-weight: 400;
 }
 
@@ -251,7 +308,7 @@ a {
 }
 
 .focus-card img {
-  width: 108px;
+  width: 162px;
   margin: 0 auto 30px;
 }
 
@@ -306,6 +363,8 @@ a {
    ========================================= */
 
 .project {
+  position: relative;
+
   display: grid;
   grid-template-columns: 1fr 1.08fr;
 
@@ -317,28 +376,28 @@ a {
   background: #111c29;
 }
 
-.thumb {
-  position: relative;
-
-  padding: 22px;
+.project-media {
+  padding: 56px 22px 30px;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
 
   background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(201, 161, 74, 0.13),
-      transparent 46%
-    ),
+    radial-gradient(circle at 50% 32%, rgba(201, 161, 74, 0.13), transparent 42%),
     linear-gradient(145deg, #10243b 0%, #081a2f 70%);
+}
+
+.thumb {
+  padding-top: 64px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .thumb > img {
   width: 100%;
   height: auto;
-  max-height: 100%;
 
   object-fit: contain;
   object-position: center;
@@ -353,15 +412,16 @@ a {
 
 .badge {
   position: absolute;
-  left: 34px;
-  bottom: 34px;
+  z-index: 2;
+  left: 22px;
+  top: 20px;
 
   padding: 9px 12px;
 
   border: 1px solid var(--gb);
   border-radius: 999px;
 
-  background: rgba(6, 20, 37, 0.9);
+  background: rgba(6, 20, 37, 0.94);
   color: var(--gold2);
 
   font-size: 0.72rem;
@@ -413,18 +473,17 @@ a {
   letter-spacing: 0.12em;
 }
 
-
 .project-update {
-  margin-top: 28px;
+  margin-top: 0;
   padding: 18px 20px;
 
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 24px;
+  gap: 18px;
 
   border-left: 2px solid var(--gold);
-  background: rgba(201, 161, 74, 0.055);
+  background: rgba(201, 161, 74, 0.07);
 }
 
 .update-label {
@@ -437,30 +496,31 @@ a {
 }
 
 .update-note {
-  max-width: 620px;
   margin: 0 !important;
 
-  font-size: 0.88rem;
-  line-height: 1.65 !important;
+  font-size: 0.84rem;
+  line-height: 1.62 !important;
 }
 
 .text-button {
   flex: 0 0 auto;
-  padding: 0;
+  padding: 4px 0;
 
   border: 0;
-  border-bottom: 1px solid rgba(226, 196, 117, 0.45);
+  border-bottom: 1px solid rgba(226, 196, 117, 0.55);
   background: transparent;
   color: var(--gold2);
 
   cursor: pointer;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
+  transition: color 0.18s ease, border-color 0.18s ease;
 }
 
 .text-button:hover {
   border-bottom-color: var(--gold2);
+  color: var(--white);
 }
 
 .project-actions {
@@ -475,7 +535,7 @@ a {
   margin: 0;
 }
 
-/* Course preview and update-history lightboxes */
+/* Embedded course and update-history lightboxes */
 .portfolio-dialog {
   width: min(1180px, calc(100vw - 48px));
   max-width: none;
@@ -504,7 +564,8 @@ a {
 }
 
 .dialog-head {
-  padding: 22px 24px;
+  position: relative;
+  padding: 22px 76px 22px 24px;
 
   display: flex;
   align-items: center;
@@ -522,6 +583,10 @@ a {
 }
 
 .dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
   width: 42px;
   height: 42px;
 
@@ -661,10 +726,10 @@ a {
 }
 
 .filters button.active {
-  border-color: var(--gb);
+  border-color: rgba(226, 196, 117, 0.62);
 
-  background: rgba(201, 161, 74, 0.08);
-  color: var(--gold2);
+  background: rgba(201, 161, 74, 0.11);
+  color: #f2d889;
 }
 
 .coming-soon {
@@ -736,7 +801,7 @@ a {
 }
 
 /* =========================================
-   12. CAPABILITIES
+   12. EXPERTISE
    ========================================= */
 
 .cap-grid {
@@ -925,6 +990,14 @@ footer {
     padding: 42px;
   }
 
+  .project-media {
+    padding: 56px 42px 34px;
+  }
+
+  .thumb {
+    padding-top: 0;
+  }
+
   .thumb > img {
     height: auto;
   }
@@ -969,13 +1042,17 @@ footer {
     padding: 28px;
   }
 
+  .project-media {
+    padding: 58px 28px 28px;
+  }
+
   .thumb {
-    padding: 14px;
+    padding-top: 0;
   }
 
   .badge {
-    left: 24px;
-    bottom: 24px;
+    left: 18px;
+    top: 16px;
   }
 
   .profile img {

@@ -36,9 +36,13 @@ document.querySelectorAll("[data-work-filter]").forEach((button) => {
     document.querySelectorAll("[data-work-filter]").forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
 
-    const message = workMessages[button.dataset.workFilter] || workMessages.all;
+    const selectedFilter = button.dataset.workFilter;
+    const message = workMessages[selectedFilter] || workMessages.all;
     document.getElementById("work-empty-title").textContent = message.title;
     document.getElementById("work-empty-copy").textContent = message.copy;
+
+    const disclaimer = document.getElementById("prior-work-disclaimer");
+    if (disclaimer) disclaimer.hidden = !(selectedFilter === "all" || selectedFilter === "gallery");
   });
 });
 
@@ -55,25 +59,25 @@ document.querySelectorAll(".track-click").forEach((link) => {
   link.addEventListener("click", () => trackPortfolioClick(link));
 });
 
-// Course preview lightbox. The iframe is loaded only after the visitor requests it,
-// which avoids downloading the Storyline package during the initial page load.
+// Embedded course lightbox. The iframe loads only after the visitor requests it,
+// avoiding a Storyline package download during the initial page load.
 const launchCourse = document.getElementById("launch-course");
-const previewCourseButton = document.getElementById("preview-course");
-const courseDialog = document.getElementById("course-preview-dialog");
-const courseFrame = document.getElementById("course-preview-frame");
-const modalLaunchCourse = document.getElementById("course-preview-new-window");
+const viewCourseButton = document.getElementById("view-course-here");
+const courseDialog = document.getElementById("course-dialog");
+const courseFrame = document.getElementById("course-frame");
+const modalLaunchCourse = document.getElementById("course-new-window");
 
-if (launchCourse && previewCourseButton && courseDialog && courseFrame) {
+if (launchCourse && viewCourseButton && courseDialog && courseFrame) {
   const courseUrl = launchCourse.href;
   if (modalLaunchCourse) modalLaunchCourse.href = courseUrl;
 
-  previewCourseButton.addEventListener("click", () => {
+  viewCourseButton.addEventListener("click", () => {
     courseFrame.src = courseUrl;
     courseDialog.showModal();
 
     if (window.zaraz && typeof window.zaraz.track === "function") {
       window.zaraz.track("portfolio_click", {
-        action: "preview_course",
+        action: "view_course_here",
         destination: courseUrl
       });
     }
