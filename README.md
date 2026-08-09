@@ -1,45 +1,24 @@
-# LearnWithMarcus Portfolio
+# LearnWithMarcus Portfolio V2
 
-Professional Learning Experience Design / Instructional Design portfolio for `learnwithmarcus.com`.
+## Easy asset swaps
+- ADDIE thumbnail: `public/assets/images/projects/intro-to-addie-thumbnail.png`
+- Profile photo: `public/assets/images/profile/marcus-johnson-profile.png`
+- Full logo: `public/assets/images/branding/marcus-johnson-logo-full.png`
+- Symbol logo: `public/assets/images/branding/marcus-johnson-logo-symbol.png`
 
-## Brand direction
+Replace an image with the same filename, commit to `main`, and Cloudflare will redeploy automatically.
 
-The site uses the same visual family as Marcus Johnson's Storyline work while presenting it in a more restrained portfolio system:
+## Portfolio categories
+- Interactive Courses
+- Video & Animation
+- Design Gallery
+- Content & Design Documents
 
-- Deep Navy: `#081A2F`
-- Warm Gold: `#C9A14A`
-- Soft Gold: `#E2C475`
-- Near Black: `#0D141D`
-- Soft Ivory: `#F5F2EA`
-- Muted Slate: `#A9B3BF`
+## Tracking hooks
+The site includes invisible optional hooks for Cloudflare Zaraz on Launch Course, LinkedIn, and Email clicks.
+They do nothing unless Zaraz is enabled and add no UTM/query parameters to visible links.
 
-## Current phase
 
-This first branded build is intended to verify:
-
-- GitHub source control
-- Cloudflare Workers Builds
-- Workers Static Assets
-- custom-domain deployment at `learnwithmarcus.com`
-- linking from the portfolio to Storyline content at `courses.learnwithmarcus.com`
-
-The page already establishes the intended visual direction and uses resume-derived positioning, but project case studies and final content will continue to evolve.
-
-## Structure
-
-```text
-public/
-  index.html
-  css/
-    styles.css
-  js/
-    main.js
-  assets/
-    images/
-      marcus-johnson-logo-full.png
-      marcus-johnson-logo-symbol.png
-    icons/
-wrangler.jsonc
-```
-
-Cloudflare deploys the contents of `./public` as static assets.
+## Contact
+- LinkedIn: https://www.linkedin.com/in/mj2022/
+- Email: marcusjohnsonlearning@gmail.com

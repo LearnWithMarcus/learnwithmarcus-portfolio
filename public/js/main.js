@@ -1,9 +1,2 @@
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", event => {
-    const target = document.querySelector(link.getAttribute("href"));
-    if (!target) return;
-
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"})}}));
+document.querySelectorAll(".track-click").forEach(a=>a.addEventListener("click",()=>{if(window.zaraz&&typeof window.zaraz.track==="function"){window.zaraz.track("portfolio_click",{action:a.dataset.track,destination:a.getAttribute("href")})}}));
