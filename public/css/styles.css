@@ -57,8 +57,8 @@ a {
   top: 0;
   z-index: 20;
 
-  height: 92px;
-  min-height: 92px;
+  height: 116px;
+  min-height: 116px;
   padding: 0 max(24px, calc((100vw - var(--w)) / 2));
   overflow: visible;
 
@@ -73,7 +73,7 @@ a {
 }
 
 .brand {
-  height: 92px;
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -81,6 +81,8 @@ a {
 .brand-full {
   width: 440px;
   max-width: 38vw;
+  max-height: 88px;
+  object-fit: contain;
 }
 
 .brand-symbol {
