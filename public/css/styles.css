@@ -57,8 +57,10 @@ a {
   top: 0;
   z-index: 20;
 
+  height: 76px;
   min-height: 76px;
   padding: 0 max(24px, calc((100vw - var(--w)) / 2));
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -68,6 +70,12 @@ a {
   background: rgba(6, 20, 37, 0.92);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
+}
+
+.brand {
+  height: 76px;
+  display: flex;
+  align-items: center;
 }
 
 .brand-full {
@@ -377,7 +385,7 @@ a {
 }
 
 .project-media {
-  padding: 56px 22px 30px;
+  padding: 56px 22px 78px;
 
   display: flex;
   flex-direction: column;
@@ -414,7 +422,7 @@ a {
   position: absolute;
   z-index: 2;
   left: 22px;
-  top: 20px;
+  bottom: 20px;
 
   padding: 9px 12px;
 
@@ -1043,7 +1051,7 @@ footer {
   }
 
   .project-media {
-    padding: 58px 28px 28px;
+    padding: 58px 28px 76px;
   }
 
   .thumb {
@@ -1052,7 +1060,7 @@ footer {
 
   .badge {
     left: 18px;
-    top: 16px;
+    bottom: 16px;
   }
 
   .profile img {
