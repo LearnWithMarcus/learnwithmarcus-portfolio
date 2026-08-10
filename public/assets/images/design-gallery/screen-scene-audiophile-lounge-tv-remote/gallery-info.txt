@@ -1,0 +1,101 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: screen-scene-audiophile-lounge-tv-remote
+
+DISPLAY TITLE: Scenario Video Scenery w/ Interactive TV & Remote
+
+CATEGORY: Screen Scene
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Immersive interactive media scenery portraying the point of view of watching a television.
+
+FULL DESCRIPTION:
+This customized interaction slide was created for the purpose of playing a scenario video to further visualize a situation and specific internal team. It is a photoshopped background with an animated video placed behind a hollowed out image of a tv.
+
+TOOLS: Articulate Storyline 360, Adobe Photoshop, Vyond
+
+TAGS:
+Storyline
+Photoshop
+Vyond
+Immersive
+Interaction
+Visual Design
+Learner Engagement
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename:
+01.png
+
+Image Title: TV Remote Gate
+
+Image Caption: Gated slide loads forcing learner to click remote to unlock
+
+Alt Text: Gated slide loads forcing learner to click remote to unlock
+
+IMAGE 02
+Filename:
+02.png
+
+Image Title: TV Remote Hover State
+
+Image Caption: Gated slide showing hover state of remote control
+
+Alt Text: Gated slide showing hover state of remote control
+
+IMAGE 03
+Filename:
+03.png
+
+Image Title: TV Turns On
+
+Image Caption: Gate fades away and TV turns on with animation revealing the video thumbnail and the slide zooms into the TV
+
+Alt Text: Gate fades away and TV turns on with animation revealing the video thumbnail
+
+IMAGE 04
+Filename:
+04.png
+
+Image Title: Video Begins
+
+Image Caption: Animated scenario video begins to play within a realistic TV frame
+
+Alt Text: Animated scenario video begins to play within a realistic TV frame
+
+IMAGE 05
+Filename:
+05.png
+
+Image Title: Video Plays
+
+Image Caption: Animated scenario video continues to play
+
+Alt Text: Animated scenario video continues to play
+
+IMAGE 06
+Filename:
+06.png
+
+Image Title: Mute Audio
+
+Image Caption: Speakers glow as the learner hovers over them to mute the slide audio
+
+Alt Text: Speakers glow as the learner hovers over them to mute the slide audio
+
+IMAGE 07
+Filename:
+07.png
+
+Image Title: Rewatch Video
+
+Image Caption: TV Glows as the learner hovers over the TV to click and replay the video
+
+Alt Text: TV Glows as the learner hovers over the TV to click and replay the video
+
+FEATURED / IMPORTANT IMAGE: 01.png

@@ -1,0 +1,65 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: interaction-diamonds
+
+DISPLAY TITLE: Interactive Related Content Buttons w/ Layers
+
+CATEGORY: Interaction
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Related content with subtopics interaction and layers.
+
+FULL DESCRIPTION:
+This interaction was created for the purpose of introducing a specific category of offered benefits and their key features to employees. I wanted to design an informational slide while also being visually appealing.
+
+TOOLS: Articulate Storyline 360
+
+TAGS:
+Storyline
+Interaction
+Related Content
+Visual Design
+Learner Engagement
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Slide Load
+
+Image Caption: Slide and shapes load with titles
+
+Alt Text: Related content neon green diamonds slide loads
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: Supporting Statement
+
+Image Caption: Supporting content statement loads
+
+Alt Text: Related content neon green diamonds slide loads supporting statement
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Click to Reveal
+
+Image Caption: Hint instructions fade in
+
+Alt Text: Related content neon green diamonds slide instructional hint fades in
+
+IMAGE 04
+Filename:04.png
+
+Image Title: Layer Reveals
+
+Image Caption: Layer loads with supporting details after learner clicks a button
+
+Alt Text: Related content neon green diamonds slide layer loads after user clicks a button
+
+FEATURED / IMPORTANT IMAGE: 01.png
