@@ -57,10 +57,8 @@ a {
   top: 0;
   z-index: 20;
 
-  height: 116px;
-  min-height: 116px;
-  padding: 0 max(24px, calc((100vw - var(--w)) / 2));
-  overflow: visible;
+  min-height: 92px;
+  padding: 12px max(24px, calc((100vw - var(--w)) / 2));
 
   display: flex;
   align-items: center;
@@ -79,10 +77,10 @@ a {
 }
 
 .brand-full {
-  width: 440px;
-  max-width: 38vw;
-  max-height: 88px;
-  object-fit: contain;
+  width: 300px;
+  height: auto;
+  max-width: none;
+  max-height: 68px;
 }
 
 .brand-symbol {
@@ -110,7 +108,11 @@ a {
   border: 1px solid var(--gb);
   border-radius: 999px;
   color: var(--gold2) !important;
-  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .header nav a:not(.pill) {
@@ -217,7 +219,12 @@ a {
   font: inherit;
   font-weight: 700;
   text-decoration: none;
-  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .btn:hover {
@@ -394,7 +401,11 @@ a {
   gap: 24px;
 
   background:
-    radial-gradient(circle at 50% 32%, rgba(201, 161, 74, 0.13), transparent 42%),
+    radial-gradient(
+      circle at 50% 32%,
+      rgba(201, 161, 74, 0.13),
+      transparent 42%
+    ),
     linear-gradient(145deg, #10243b 0%, #081a2f 70%);
 }
 
@@ -531,7 +542,9 @@ a {
   font: inherit;
   font-size: 0.76rem;
   font-weight: 700;
-  transition: color 0.18s ease, border-color 0.18s ease;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .text-button:hover {
@@ -974,8 +987,8 @@ footer {
    ========================================= */
 
 @media (max-width: 1050px) {
- .brand-full {
-    width: 400px;
+  .brand-full {
+    width: 280px;
   }
 
   .header nav a:not(.pill) {
@@ -990,11 +1003,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
- .hero {
+  .hero {
     min-height: auto;
+    padding: 72px 0 76px;
   }
 
   .focus-card {
+    justify-self: center;
+    width: min(100%, 650px);
     max-width: 650px;
   }
 
@@ -1028,17 +1044,45 @@ footer {
    ========================================= */
 
 @media (max-width: 700px) {
- .brand-full {
+  .header {
+    min-height: 72px;
+    padding: 8px 16px;
+  }
+
+  .brand {
+    height: auto;
+  }
+
+  .brand-full {
     display: none;
   }
 
   .brand-symbol {
     display: block;
+    width: 52px;
   }
 
   .stats,
   .cap-grid {
     grid-template-columns: 1fr;
+  }
+
+  .stats {
+    gap: 18px;
+  }
+
+  .stats > div {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .stats > div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .hero {
+    padding: 58px 0 64px;
   }
 
   .hero h1 {
@@ -1071,72 +1115,6 @@ footer {
     bottom: 16px;
   }
 
-  .profile img {
-    width: 128px;
-    height: 128px;
-  }
-
-  .profile-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .profile-actions .btn {
-    width: 100%;
-  }
-
-  .footer-inner {
-    flex-wrap: wrap;
-    padding: 20px 0;
-  }
-
-  .domain {
-    width: 100%;
-    margin-left: 56px;
-  }
-}
-
-
-@media (max-width: 1050px) {
-  .hero {
-    padding: 72px 0 76px;
-  }
-
-  .focus-card {
-    justify-self: center;
-    width: min(100%, 650px);
-  }
-}
-
-@media (max-width: 700px) {
-  .header {
-    height: 72px;
-    min-height: 72px;
-  }
-
-  .brand {
-    height: 72px;
-  }
-
-  .hero {
-    padding: 58px 0 64px;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .stats > div {
-    padding-bottom: 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .stats > div:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
-
   .project-update,
   .dialog-footer {
     align-items: flex-start;
@@ -1163,5 +1141,29 @@ footer {
 
   .course-frame-wrap iframe {
     height: 62vh;
+  }
+
+  .profile img {
+    width: 128px;
+    height: 128px;
+  }
+
+  .profile-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .profile-actions .btn {
+    width: 100%;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+
+  .domain {
+    width: 100%;
+    margin-left: 56px;
   }
 }
