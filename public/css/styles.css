@@ -1451,4 +1451,22 @@ footer {
     width: auto;
     margin-left: 0;
   }
+
+  /* ACTIVE DEVELOPMENT STATUS PILL */
+  .badge {
+    width: fit-content;
+    max-width: 100%;
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+
+  /* ACTIVE DEVELOPMENT MOBILE COPY */
+  .project-copy > p:not(.updated) {
+    line-height: 1.55;
+  }
+
+  /* EXPERTISE MOBILE DENSITY */
+  .cap-grid article {
+    padding: 19px 22px;
+  }
 }
