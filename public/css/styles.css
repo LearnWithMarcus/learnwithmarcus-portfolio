@@ -77,10 +77,10 @@ a {
 }
 
 .brand-full {
-  width: 300px;
-  height: auto;
+  width: auto;
+  height: 64px;
   max-width: none;
-  max-height: 68px;
+  max-height: none;
 }
 
 .brand-symbol {
@@ -988,7 +988,8 @@ footer {
 
 @media (max-width: 1050px) {
   .brand-full {
-    width: 280px;
+    width: auto;
+    height: 56px;
   }
 
   .header nav a:not(.pill) {
