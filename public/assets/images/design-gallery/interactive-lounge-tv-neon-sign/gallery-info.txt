@@ -1,0 +1,60 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: interactive-lounge-tv-neon-sign
+
+DISPLAY TITLE: Immersive Benefits Lounge
+
+CATEGORY: Interaction
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Interactive and immersive lounge area to promoting company benefits with working and dimmable custom neon sign, buttons, and a realistic fly-out TV.
+
+FULL DESCRIPTION:
+This interaction was created for the purpose of introducing a specific company benefit and I wanted it and it's supporting resources to be available all on one slide. This lounge slide serves the purpose of a main menu with branching navigation. You can click the neon sign to dim it off or fade back on. The TV flys out towards your face as you click it to start the animated video.
+
+TOOLS: Articulate Storyline 360, Adobe Photoshop, Vyond
+
+TAGS:
+Storyline
+Photoshop
+Vyond
+Interaction
+Immersive
+Video
+
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Benefits Lounge w/ Working Neon Sign
+
+Image Caption: This provides all of the information needed to introduce a specific company benefit
+
+Alt Text: Immersive benefits lounge slide
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: Neon Sign (Dimmed)
+
+Image Caption: The learner can click the neon sign to dim it or turn it back on
+
+Alt Text: Benefits lounge slide with dimmed neon sign
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Realistic Fly-Out TV
+
+Image Caption: TV flys towards your face when clicked prior to starting the animated scneario video
+
+Alt Text: TV with animated video behind it playing video
+
+FEATURED / IMPORTANT IMAGE: 01.png
+
+Notes: This is one of my top favorite designs - this should be towards the front of the Design Gallery.

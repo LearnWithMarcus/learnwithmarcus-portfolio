@@ -1,0 +1,82 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: three-step-process-interaction
+
+DISPLAY TITLE: 3-Step Process Interaction
+
+CATEGORY: Interaction
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+This interactive process slide conveys the three pertinent steps involved within a specific process.
+
+FULL DESCRIPTION:
+The content for this slide was a compliance regulation and supporting process so I decided to transform it into an interactive click-to-reveal slide instead of just listing the steps in a bulleted fashion.
+
+TOOLS: Articulate Storyline 360
+
+TAGS:
+Storyline
+Interaction
+Process
+Learner Engagement
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Slide Load
+
+Image Caption: Multimedia plays and supporting statement animates in
+
+Alt Text: Process slide loads with multimedia background and opening statement text
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: Animated Buttons Enter w/ Hint
+
+Image Caption: The three main buttons enter slide and learner instructions fade in on bottom ribbon
+
+Alt Text: Process slide with multimedia buttons enter slide with learner hint
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Background Transition
+
+Image Caption: Background transitions to a static image to aid contrast and readability
+
+Alt Text: Process slide with multimedia background transitions
+
+IMAGE 04
+Filename:04.png
+
+Image Title: Button 1 Animation
+
+Image Caption: Learner clicks button 1 and the top image card falls, revealing icon and supporting text
+
+Alt Text: Process slide with multimedia button 1 animation
+
+IMAGE 05
+Filename:05.png
+
+Image Title: Button 1 Revealed
+
+Image Caption: Button 1 content is now revealed
+
+Alt Text: Process slide with multimedia button one content revealed
+
+IMAGE 06
+Filename:06.png
+
+Image Title: Button 3 Reveal
+
+Image Caption: Button 3 content reveals as top image card falls out of slide
+
+Alt Text: Process slide with multimedia button three content revealing
+
+FEATURED / IMPORTANT IMAGE: 06.png

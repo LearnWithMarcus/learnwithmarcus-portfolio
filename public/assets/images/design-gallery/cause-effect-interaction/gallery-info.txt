@@ -1,0 +1,111 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: cause-effect-interaction
+
+DISPLAY TITLE: Cause & Effect Examples w/ Layers
+
+CATEGORY: Interaction
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Cause & effect content slide with custom buttons and layers.
+
+FULL DESCRIPTION:
+I like to utilize objects from my selected slide imagery to use as buttons or interactive components for my slides. This slide shows two cause and effect examples.
+
+TOOLS: Articulate Storyline 360,Adobe Photoshop
+
+TAGS:
+Storyline
+Photoshop
+Interaction
+Related Content
+Visual Design
+Cause Effect
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Slide Load
+
+Image Caption: Opening statement fades in.
+
+Alt Text: Related content cause and effect slide loads and opening statement fades in
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: Imagery Loads
+
+Image Caption: Main slide imagery begins their entrance animations
+
+Alt Text: Related content cause and effect slide imagery loads
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Imagery Continues to Load
+
+Image Caption: Main slide imagery continues to load.
+
+Alt Text: Related content cause and effect slide imagery continues to load
+
+IMAGE 04
+Filename:04.png
+
+Image Title: Supporting Content Enters
+
+Image Caption: Supporting text content enters the slide
+
+Alt Text: Related content cause and effect slide supporting text content enters the slide
+
+IMAGE 05
+Filename:05.png
+
+Image Title: Opening Statement Fades Out
+
+Image Caption: Opening statement fades out and is replaced by remaining portion of imagery
+
+Alt Text: Related content cause and effect slide opening statement fades out
+
+IMAGE 06
+Filename:06.png
+
+Image Title: Click to View
+
+Image Caption: Instructions populate
+
+Alt Text: Related content cause and effect slide click to view instructions populate
+
+IMAGE 07
+Filename:07.png
+
+Image Title: Buttons Appear
+
+Image Caption: Two imagery components turn into buttons
+
+Alt Text: Related content cause and effect slide buttons appear
+
+IMAGE 08
+Filename:08.png
+
+Image Title: Button Hover State
+
+Image Caption: Showcasing the custom button hover state
+
+Alt Text: Related content cause and effect slide button hover state
+
+IMAGE 09
+Filename:09.png
+
+Image Title: Layer Reveal
+
+Image Caption: First example layer loads after button click
+
+Alt Text: Related content cause and effect slide layer reveal
+
+FEATURED / IMPORTANT IMAGE: 01.png

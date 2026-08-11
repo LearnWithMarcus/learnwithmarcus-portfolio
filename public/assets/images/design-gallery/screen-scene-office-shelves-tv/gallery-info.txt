@@ -1,0 +1,67 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: screen-scene-office-shelves-tv
+
+DISPLAY TITLE: Screen Scene w/ Knowledge Check
+
+CATEGORY: Screen Scene
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Up-close office screen scene with interactive TV and follow-up knowledge check.
+
+FULL DESCRIPTION:
+This customized interaction slide was created for the purpose of playing a scenario video to illustrate the importance of a specific compliance policy. It is followed by a Knowledge Check slide.
+
+TOOLS: Articulate Storyline 360, Adobe Photoshop, Vyond
+
+TAGS:
+Storyline
+Photoshop
+Vyond
+Immersive
+Interaction
+Visual Design
+Learner Engagement
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Slide Load
+
+Image Caption: Screen scene to view an animated scenario video
+
+Alt Text: Up close office screen scene to view an animated video
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: 'Lights Dim'
+
+Image Caption: The surrounding scenery lighting dims as the learner starts the video
+
+Alt Text: Up close office screen scene to view an animated video lights dimmed
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Animated Video Plays
+
+Image Caption: The animated scneario video continues to play
+
+Alt Text: Up close office screen scene to view an animated video lights dimmed video playing
+
+IMAGE 04
+Filename:04.png
+
+Image Title: Knowledge Check
+
+Image Caption: Knowledge Check slide loads upon slide advance
+
+Alt Text: Knowledge Check slide loads upon slide advance
+
+FEATURED / IMPORTANT IMAGE: 01.png
