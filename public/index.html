@@ -27,6 +27,18 @@
         recentUpdate:
           "Decided on a consistent section template for the section opening title slides - still performing tweaks and updates. | Decided to tweak my branding color scheme - updated slide masters.",
         lastUpdated: "August 10, 2026",
+
+        // Older updates stay here so the Development History lightbox
+        // becomes a running timeline. Add the previous current update
+        // here before replacing recentUpdate/lastUpdated above.
+        history: [
+          {
+            date: "August 9, 2026",
+            title: "Current working build",
+            copy:
+              "The working course continues to receive content and interaction refinements as development progresses. Recent work has focused on strengthening the learner experience and polishing the current build.",
+          },
+        ],
       };
     </script>
     <header class="header">
@@ -159,9 +171,7 @@
                 the framework to build and continuously improve effective
                 learning experiences.
               </p>
-              <p class="updated">
-                <b>LAST UPDATED</b> <span id="active-development-date"></span>
-              </p>
+              <p class="updated"><b>LAST UPDATED</b> <span id="active-development-date"></span></p>
               <div class="project-actions">
                 <button class="btn primary" type="button" id="view-course-here">
                   View Course
@@ -196,19 +206,15 @@
 
           <div class="filters" role="tablist" aria-label="Portfolio categories">
             <button type="button" data-work-filter="all">All Work</button>
-
             <button type="button" data-work-filter="course">
               Interactive Courses
             </button>
-
             <button type="button" data-work-filter="video">
               Video &amp; Animation
             </button>
-
             <button class="active" type="button" data-work-filter="gallery">
               Design Gallery
             </button>
-
             <button type="button" data-work-filter="document">
               Content &amp; Design Documents
             </button>

@@ -128,12 +128,24 @@ if (launchCourse && viewCourseButton && courseDialog && courseFrame) {
 // Active Development update history
 // =========================================
 
+const currentCourseUpdate =
+  typeof ACTIVE_DEVELOPMENT !== "undefined"
+    ? {
+        date: ACTIVE_DEVELOPMENT.lastUpdated,
+        title: "Latest update",
+        copy: ACTIVE_DEVELOPMENT.recentUpdate.replaceAll(" | ", " ")
+      }
+    : null;
+
+const archivedCourseUpdates =
+  typeof ACTIVE_DEVELOPMENT !== "undefined" &&
+  Array.isArray(ACTIVE_DEVELOPMENT.history)
+    ? ACTIVE_DEVELOPMENT.history
+    : [];
+
 const courseUpdates = [
-  {
-    date: "August 9, 2026",
-    title: "Current working build",
-    copy: "The working course continues to receive content and interaction refinements as development progresses. Recent work has focused on strengthening the learner experience and polishing the current build."
-  }
+  ...(currentCourseUpdate ? [currentCourseUpdate] : []),
+  ...archivedCourseUpdates
 ];
 
 const updateHistoryButton = document.getElementById("view-update-history");
@@ -376,11 +388,11 @@ document.querySelectorAll(".portfolio-dialog").forEach((dialog) => {
   });
 });
 
-// Render gallery and preserve the current default "Interactive Courses" view.
+// Render gallery and preserve whichever Selected Work filter is marked active in index.html.
 renderGalleryCards();
 
 const initialWorkFilter =
   document.querySelector("[data-work-filter].active")?.dataset.workFilter ||
-  "course";
+  "gallery";
 
 setWorkView(initialWorkFilter);
