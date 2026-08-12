@@ -1,0 +1,129 @@
+DESIGN GALLERY ITEM
+
+ID / Folder Name: interactive-custom-laptop
+
+DISPLAY TITLE: Interactive Laptop Virtual Environment
+
+CATEGORY: Virtual Environment
+
+MASTER THUMBNAIL:
+Filename:thumb.png
+
+SHORT CARD DESCRIPTION:
+Interactive virtual environment with a custom laptop with relatable tabbed browser.
+
+FULL DESCRIPTION:
+I designed this interactive virtual environment to mimic the look and feel of the company Sharepoint page with a tabbed browser and micro interactions within each of the tabs pertaining to different topics.
+
+TOOLS: Articulate Storyline 360, Adobe Photoshop
+
+TAGS:
+Storyline
+Photoshop
+Interaction
+Virtual Environment
+Visual Design
+Learner Engagement
+
+PRIOR PROFESSIONAL WORK: Yes
+
+IMAGE 01
+Filename: 01.png
+
+Image Title: Opening Scene
+
+Image Caption: Scene loads and laptop turns on
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide loads
+
+IMAGE 02
+Filename: 02.png
+
+Image Title: Relatable Browser Icon Button
+
+Image Caption: A relatable fictitiously named browser icon button enters
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide browser icon button pop up
+
+IMAGE 03
+Filename: 03.png
+
+Image Title: Browser Button Hover State
+
+Image Caption: Mouse hover state of the browser icon button
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide browser icon hover state
+
+IMAGE 04
+Filename:04.png
+
+Image Title: Tabbed Browser Loads
+
+Image Caption: Switches to a laptop user's point of view when the learner clicks the browser icon button
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tabbed browser loads
+
+IMAGE 05
+Filename:05.png
+
+Image Title: Setting Expectations
+
+Image Caption: Instructions are provided to the learner
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide instructions fade in
+
+IMAGE 06
+Filename:06.png
+
+Image Title: Tab Hover State
+
+Image Caption: Showcasing the hover state of the tabs
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tab hover state
+
+IMAGE 07
+Filename:07.png
+
+Image Title: Tab Visited State
+
+Image Caption: Tab 2 major point content layout while showing the visited state of tab 1
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tab visited state 
+
+IMAGE 08
+Filename:08.png
+
+Image Title: Tab 3 Loading
+
+Image Caption: Tab 3 content loading
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tab 3 content loading
+
+IMAGE 09
+Filename:09.png
+
+Image Title: Tab 3 Major Point
+
+Image Caption: Tab 3 content layout with major point
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tab 3 major point
+
+IMAGE 010
+Filename:10.png
+
+Image Title: Tab 4 w/ Micro Interaction
+
+Image Caption: Tab 4 major point with clickable related content interaction
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide tab 4 loads
+
+IMAGE 11
+Filename:11.png
+
+Image Title: All Tabs Visited - Click Next
+
+Image Caption: Once all tabs have been visited, the Click Next hint fades in with narration.
+
+Alt Text: Immersive custom laptop with tabbed browser interaction slide click next
+
+FEATURED / IMPORTANT IMAGE: 03.png

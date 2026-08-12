@@ -24,6 +24,95 @@ window.designGalleryItems = [
     ]
   },
   {
+    id: "interactive-custom-laptop",
+    title: "Interactive Laptop Virtual Environment",
+    category: "Virtual Environment",
+    thumbnail: "/assets/images/design-gallery/interactive-custom-laptop/thumb.png",
+    shortDescription:
+      "Interactive virtual environment featuring a custom laptop and familiar tabbed-browser experience.",
+    description:
+      "I designed this interactive virtual environment to mimic the look and feel of the company's SharePoint page, using a tabbed browser and micro-interactions within each tab to organize different topics in a familiar interface.",
+    tools: ["Articulate Storyline 360", "Adobe Photoshop"],
+    tags: [
+      "Storyline",
+      "Photoshop",
+      "Interaction",
+      "Virtual Environment",
+      "Visual Design",
+      "Learner Engagement"
+    ],
+    priorProfessionalWork: true,
+    featuredImage: 2,
+    images: [
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/01.png",
+        title: "Opening Scene",
+        caption: "Scene loads and the laptop turns on.",
+        alt: "Immersive custom laptop with tabbed browser interaction slide loading."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/02.png",
+        title: "Relatable Browser Icon Button",
+        caption: "A relatable fictitiously named browser icon button enters.",
+        alt: "Immersive custom laptop interaction with browser icon button appearing."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/03.png",
+        title: "Browser Button Hover State",
+        caption: "Mouse hover state of the browser icon button.",
+        alt: "Immersive custom laptop interaction showing the browser icon hover state."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/04.png",
+        title: "Tabbed Browser Loads",
+        caption: "The view switches to the laptop user's point of view when the learner clicks the browser icon button.",
+        alt: "Immersive custom laptop interaction with the tabbed browser loaded."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/05.png",
+        title: "Setting Expectations",
+        caption: "Instructions are provided to the learner.",
+        alt: "Immersive custom laptop interaction with instructions fading in."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/06.png",
+        title: "Tab Hover State",
+        caption: "The tab hover state reinforces which areas are selectable.",
+        alt: "Immersive custom laptop interaction showing a tab hover state."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/07.png",
+        title: "Tab Visited State",
+        caption: "Tab 2 displays its major-point content while showing the visited state of Tab 1.",
+        alt: "Immersive custom laptop interaction showing a visited tab state."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/08.png",
+        title: "Tab 3 Loading",
+        caption: "Tab 3 content begins loading into the browser view.",
+        alt: "Immersive custom laptop interaction with Tab 3 content loading."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/09.png",
+        title: "Tab 3 Major Point",
+        caption: "Tab 3 presents its major-point content layout.",
+        alt: "Immersive custom laptop interaction showing the Tab 3 major point."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/10.png",
+        title: "Tab 4 w/ Micro Interaction",
+        caption: "Tab 4 presents a major point with an additional clickable related-content interaction.",
+        alt: "Immersive custom laptop interaction with Tab 4 and a related-content micro-interaction."
+      },
+      {
+        src: "/assets/images/design-gallery/interactive-custom-laptop/11.png",
+        title: "All Tabs Visited - Click Next",
+        caption: "Once all tabs have been visited, the Click Next hint fades in with narration.",
+        alt: "Immersive custom laptop interaction with all tabs visited and a Click Next hint displayed."
+      }
+    ]
+  },
+  {
     id: "interaction-diamonds",
     title: "Interactive Related-Content Reveal",
     category: "Interaction Design",
