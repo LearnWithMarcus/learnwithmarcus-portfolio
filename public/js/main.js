@@ -128,25 +128,13 @@ if (launchCourse && viewCourseButton && courseDialog && courseFrame) {
 // Active Development update history
 // =========================================
 
-const currentCourseUpdate =
-  typeof ACTIVE_DEVELOPMENT !== "undefined"
-    ? {
-        date: ACTIVE_DEVELOPMENT.lastUpdated,
-        title: "Latest update",
-        copy: ACTIVE_DEVELOPMENT.recentUpdate.replaceAll(" | ", " ")
-      }
-    : null;
-
-const archivedCourseUpdates =
+// The complete update timeline now lives in one place: ACTIVE_DEVELOPMENT.updates
+// in index.html. Add new entries to the TOP of that array and keep older entries.
+const courseUpdates =
   typeof ACTIVE_DEVELOPMENT !== "undefined" &&
-  Array.isArray(ACTIVE_DEVELOPMENT.history)
-    ? ACTIVE_DEVELOPMENT.history
+  Array.isArray(ACTIVE_DEVELOPMENT.updates)
+    ? ACTIVE_DEVELOPMENT.updates
     : [];
-
-const courseUpdates = [
-  ...(currentCourseUpdate ? [currentCourseUpdate] : []),
-  ...archivedCourseUpdates
-];
 
 const updateHistoryButton = document.getElementById("view-update-history");
 const updateHistoryDialog = document.getElementById("update-history-dialog");

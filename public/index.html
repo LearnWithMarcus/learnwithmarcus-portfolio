@@ -17,25 +17,36 @@
   </head>
   <body>
     <!-- =========================================================
-         ACTIVE DEVELOPMENT — EDIT THESE TWO VALUES
+         ACTIVE DEVELOPMENT — UPDATE HISTORY
          =========================================================
-         Update these two values whenever you publish meaningful
-         changes to the active course.
+         Add each new course update to the TOP of the updates array.
+         Do not delete older entries.
+
+         The first entry automatically controls:
+         • Recent Update text on the Active Development card
+         • Last Updated date
+         • First item in the Development History lightbox
     ========================================================== -->
     <script>
       const ACTIVE_DEVELOPMENT = {
-        recentUpdate:
-          "Standardized the course color palette and updated slide masters to improve visual consistency throughout the course. Refined assessment and feedback layouts, including new branded correct and incorrect response states.",
-        lastUpdated: "August 11, 2026",
-
-        // Older updates stay here so the Development History lightbox
-        // becomes a running timeline. Add the previous current update
-        // here before replacing recentUpdate/lastUpdated above.
-        history: [
+        updates: [
+          {
+            date: "August 11, 2026",
+            title: "Color system & feedback states",
+            copy:
+              "Standardized the course color palette and updated slide masters to improve visual consistency throughout the course. Refined assessment and feedback layouts, including new branded correct and incorrect response states.",
+          },
+          {
+            date: "August 10, 2026",
+            title: "Section templates & branding refinement",
+            copy:
+              "Decided on a consistent section template for the section opening title slides - still performing tweaks and updates. Decided to tweak my branding color scheme - updated slide masters.",
+          },
           {
             date: "August 9, 2026",
             title: "Current working build",
-            copy: "The working course continues to receive content and interaction refinements as development progresses. Recent work has focused on strengthening the learner experience and polishing the current build.",
+            copy:
+              "The working course continues to receive content and interaction refinements as development progresses. Recent work has focused on strengthening the learner experience and polishing the current build.",
           },
         ],
       };
@@ -170,9 +181,7 @@
                 the framework to build and continuously improve effective
                 learning experiences.
               </p>
-              <p class="updated">
-                <b>LAST UPDATED</b> <span id="active-development-date"></span>
-              </p>
+              <p class="updated"><b>LAST UPDATED</b> <span id="active-development-date"></span></p>
               <div class="project-actions">
                 <button class="btn primary" type="button" id="view-course-here">
                   View Course
@@ -519,7 +528,8 @@
       </div>
     </footer>
     <script>
-      // Populate Active Development content from the constants above.
+      // The newest update is always the first item in the history array.
+      const latestCourseUpdate = ACTIVE_DEVELOPMENT.updates?.[0];
       const activeUpdateElement = document.getElementById(
         "active-development-update",
       );
@@ -527,20 +537,12 @@
         "active-development-date",
       );
 
-      if (activeUpdateElement) {
-        ACTIVE_DEVELOPMENT.recentUpdate.split(" | ").forEach((entry, index) => {
-          if (index > 0) {
-            activeUpdateElement.append(
-              document.createElement("br"),
-              document.createElement("br"),
-            );
-          }
-          activeUpdateElement.append(document.createTextNode(entry));
-        });
+      if (latestCourseUpdate && activeUpdateElement) {
+        activeUpdateElement.textContent = latestCourseUpdate.copy;
       }
 
-      if (activeDateElement) {
-        activeDateElement.textContent = ACTIVE_DEVELOPMENT.lastUpdated;
+      if (latestCourseUpdate && activeDateElement) {
+        activeDateElement.textContent = latestCourseUpdate.date;
       }
     </script>
     <script src="/js/gallery-data.js"></script>
