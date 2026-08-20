@@ -15,64 +15,11 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 // =========================================
 // Selected Work filters
 // =========================================
-
-const workMessages = {
-  course: {
-    title: "Completed interactive courses will appear here.",
-    copy: "Future completed Storyline and other interactive learning experiences will be added to this collection."
-  },
-  video: {
-    title: "Video & Animation is being prepared.",
-    copy: "Vyond animation, instructional video, and other multimedia examples will populate this collection as they are completed."
-  },
-  document: {
-    title: "Content & Design Documents are being prepared.",
-    copy: "Storyboards, guides, planning artifacts, performance-support resources, and other instructional design documents will populate this collection."
-  }
-};
-
-const designGalleryItems = Array.isArray(window.designGalleryItems)
-  ? window.designGalleryItems
-  : [];
-
-const workEmptyState = document.getElementById("work-empty-state");
-const workEmptyTitle = document.getElementById("work-empty-title");
-const workEmptyCopy = document.getElementById("work-empty-copy");
-const designGalleryGrid = document.getElementById("design-gallery");
-const priorWorkDisclaimer = document.getElementById("prior-work-disclaimer");
-
-function setWorkView(filter) {
-  const showGallery = filter === "gallery" || filter === "all";
-
-  if (designGalleryGrid) {
-    designGalleryGrid.hidden = !showGallery;
-  }
-
-  if (workEmptyState) {
-    workEmptyState.hidden = showGallery;
-  }
-
-  if (!showGallery && workMessages[filter]) {
-    if (workEmptyTitle) workEmptyTitle.textContent = workMessages[filter].title;
-    if (workEmptyCopy) workEmptyCopy.textContent = workMessages[filter].copy;
-  }
-
-  if (priorWorkDisclaimer) {
-    priorWorkDisclaimer.hidden = !showGallery;
-  }
-}
-
-document.querySelectorAll("[data-work-filter]").forEach((button) => {
-  button.addEventListener("click", () => {
-    document
-      .querySelectorAll("[data-work-filter]")
-      .forEach((item) => item.classList.remove("active"));
-
-    button.classList.add("active");
-    setWorkView(button.dataset.workFilter);
-  });
-});
-
+const workMessages={course:{title:"Completed interactive courses will appear here.",copy:"Future completed Storyline and other interactive learning experiences will be added to this collection."},video:{title:"Video & Animation is being prepared.",copy:"Vyond animation, instructional video, and other multimedia examples will populate this collection as they are completed."},document:{title:"Content & Design Documents are being prepared.",copy:"Storyboards, guides, planning artifacts, performance-support resources, and other instructional design documents will populate this collection."}};
+const designGalleryItems=Array.isArray(window.designGalleryItems)?window.designGalleryItems:[];
+const workEmptyState=document.getElementById("work-empty-state"),workEmptyTitle=document.getElementById("work-empty-title"),workEmptyCopy=document.getElementById("work-empty-copy"),designGalleryGrid=document.getElementById("design-gallery"),caseStudyGrid=document.getElementById("case-study-grid"),priorWorkDisclaimer=document.getElementById("prior-work-disclaimer"),caseStudyDisclaimer=document.getElementById("case-study-disclaimer");
+function setWorkView(filter){const showCaseStudies=filter==="case-study"||filter==="all",showGallery=filter==="gallery"||filter==="all",hasVisibleWork=showCaseStudies||showGallery;if(caseStudyGrid)caseStudyGrid.hidden=!showCaseStudies;if(designGalleryGrid)designGalleryGrid.hidden=!showGallery;if(workEmptyState)workEmptyState.hidden=hasVisibleWork;if(!hasVisibleWork&&workMessages[filter]){if(workEmptyTitle)workEmptyTitle.textContent=workMessages[filter].title;if(workEmptyCopy)workEmptyCopy.textContent=workMessages[filter].copy;}if(priorWorkDisclaimer)priorWorkDisclaimer.hidden=!showGallery;if(caseStudyDisclaimer)caseStudyDisclaimer.hidden=filter!=="case-study";}
+document.querySelectorAll("[data-work-filter]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-work-filter]").forEach(item=>item.classList.remove("active"));button.classList.add("active");setWorkView(button.dataset.workFilter);}));
 // =========================================
 // Optional click tracking
 // =========================================
@@ -381,6 +328,6 @@ renderGalleryCards();
 
 const initialWorkFilter =
   document.querySelector("[data-work-filter].active")?.dataset.workFilter ||
-  "gallery";
+  "case-study";
 
 setWorkView(initialWorkFilter);
