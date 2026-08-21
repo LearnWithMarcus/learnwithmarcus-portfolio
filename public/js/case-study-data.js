@@ -11,7 +11,7 @@ window.caseStudyItems = [
     shortDescription:
       "A fictionalized financial-services case study demonstrating training needs analysis, learning design, scenario development, performance support, and overall lesson planning.",
     thumbnail:
-      "\assets\case-studies\northstar-flexline-product-launch\thumb.png",
+      "/assets/case-studies/northstar-flexline-product-launch/thumb.png",
     tags: ["Needs Analysis", "Multimedia", "eLearning", "Performance Support"],
     documents: [
       {
