@@ -207,7 +207,16 @@
                 <b>LAST UPDATED</b> <span id="active-development-date"></span>
               </p>
               <div class="project-actions">
-                <button class="btn primary" type="button" id="view-course-here">
+                <button
+                  class="btn primary"
+                  type="button"
+                  id="view-course-here"
+                  data-course-preview
+                  data-course-title="Introduction to ADDIE"
+                  data-course-eyebrow="IN ACTIVE DEVELOPMENT"
+                  data-course-url="https://courses.learnwithmarcus.com/intro-to-addie/story.html"
+                  data-course-note="This course is in active development: certain features and functionalities may not work properly. Please utilize the course Menu to navigate if needed."
+                >
                   View Course
                 </button>
                 <a
@@ -228,26 +237,135 @@
       <section class="section" id="work">
         <div class="wrap">
           <div class="section-head">
-            <div><p class="eyebrow">SELECTED WORK</p><h2>Explore work by format.</h2></div>
-            <p>Completed portfolio items will be added regularly. Use the categories below to view work by format.</p>
+            <div>
+              <p class="eyebrow">SELECTED WORK</p>
+              <h2>Explore work by format.</h2>
+            </div>
+            <p>
+              Completed portfolio items will be added regularly. Use the
+              categories below to view work by format.
+            </p>
           </div>
           <div class="filters" role="tablist" aria-label="Portfolio categories">
-            <button class="active" type="button" data-work-filter="case-study">Case Studies</button>
+            <button class="active" type="button" data-work-filter="case-study">
+              Case Studies
+            </button>
             <button type="button" data-work-filter="all">All Work</button>
-            <button type="button" data-work-filter="course">Interactive Courses</button>
-            <button type="button" data-work-filter="video">Video &amp; Animation</button>
-            <button type="button" data-work-filter="gallery">Design Gallery</button>
-            <button type="button" data-work-filter="document">Content &amp; Design Documents</button>
+            <button type="button" data-work-filter="course">
+              Interactive Courses
+            </button>
+            <button type="button" data-work-filter="video">
+              Video &amp; Animation
+            </button>
+            <button type="button" data-work-filter="gallery">
+              Design Gallery
+            </button>
+            <button type="button" data-work-filter="document">
+              Content &amp; Design Documents
+            </button>
           </div>
-          <div id="case-study-grid" class="case-study-grid" aria-live="polite"></div>
-          <div id="design-gallery" class="design-gallery-grid" aria-live="polite" hidden></div>
-          <div class="coming-soon" id="work-empty-state" aria-live="polite" hidden>
-            <img src="/assets/images/branding/marcus-johnson-logo-symbol.png" alt="" />
-            <h3 id="work-empty-title">Completed interactive courses will appear here.</h3>
-            <p id="work-empty-copy">Future completed Storyline and other interactive learning experiences will be added to this collection.</p>
+          <div
+            id="case-study-grid"
+            class="case-study-grid"
+            aria-live="polite"
+          ></div>
+          <div
+            id="interactive-course-grid"
+            class="course-showcase-grid"
+            aria-live="polite"
+            hidden
+          >
+            <article class="course-showcase-card">
+              <div class="course-showcase-image">
+                <img
+                  src="/assets/images/projects/knowledge-check-examples-thumbnail.png"
+                  alt="Knowledge Check Examples course thumbnail"
+                />
+                <span class="course-showcase-type">Interactive Course</span>
+              </div>
+
+              <div class="course-showcase-copy">
+                <p class="eyebrow">ASSESSMENT &amp; INTERACTION DESIGN</p>
+                <h3>Knowledge Check Examples</h3>
+                <p>
+                  Explore a few example of the various types of Knowledge Check
+                  slides that are possible within Storyline 360.
+                </p>
+
+                <div class="tags course-showcase-tags">
+                  <span>Articulate Storyline 360</span>
+                  <span>Knowledge Checks</span>
+                  <span>Assessment Design</span>
+                  <span>Feedback</span>
+                </div>
+
+                <div class="course-showcase-actions">
+                  <button
+                    class="btn primary"
+                    type="button"
+                    data-course-preview
+                    data-course-title="Knowledge Check Examples"
+                    data-course-eyebrow="INTERACTIVE COURSE"
+                    data-course-url="https://courses.learnwithmarcus.com/knowledge-check-examples/story.html"
+                    data-course-note="Explore a collection of interactive knowledge-check and feedback examples."
+                  >
+                    View Course
+                  </button>
+
+                  <a
+                    class="btn secondary track-click"
+                    data-track="launch_knowledge_check_examples"
+                    href="https://courses.learnwithmarcus.com/knowledge-check-examples/story.html"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Launch in New Window
+                  </a>
+                </div>
+              </div>
+            </article>
           </div>
-          <p class="disclaimer case-study-disclaimer" id="case-study-disclaimer">Case studies presented here use fictionalized organizations, products, data, and supporting materials to demonstrate instructional design strategy, analysis, solution design, and development. Any resemblance to actual organizations or products is incidental.</p>
-          <p class="disclaimer" id="prior-work-disclaimer" hidden>Selected prior-work images are presented as visual examples of design and development work. Proprietary course files and confidential content are not distributed, and identifying details have been removed or blurred where appropriate.</p>
+
+          <div
+            id="design-gallery"
+            class="design-gallery-grid"
+            aria-live="polite"
+            hidden
+          ></div>
+          <div
+            class="coming-soon"
+            id="work-empty-state"
+            aria-live="polite"
+            hidden
+          >
+            <img
+              src="/assets/images/branding/marcus-johnson-logo-symbol.png"
+              alt=""
+            />
+            <h3 id="work-empty-title">
+              Completed interactive courses will appear here.
+            </h3>
+            <p id="work-empty-copy">
+              Future completed Storyline and other interactive learning
+              experiences will be added to this collection.
+            </p>
+          </div>
+          <p
+            class="disclaimer case-study-disclaimer"
+            id="case-study-disclaimer"
+          >
+            Case studies presented here use fictionalized organizations,
+            products, data, and supporting materials to demonstrate
+            instructional design strategy, analysis, solution design, and
+            development. Any resemblance to actual organizations or products is
+            incidental.
+          </p>
+          <p class="disclaimer" id="prior-work-disclaimer" hidden>
+            Selected prior-work images are presented as visual examples of
+            design and development work. Proprietary course files and
+            confidential content are not distributed, and identifying details
+            have been removed or blurred where appropriate.
+          </p>
         </div>
       </section>
 
@@ -377,8 +495,10 @@
         <div class="dialog-shell">
           <div class="dialog-head">
             <div>
-              <p class="eyebrow">IN ACTIVE DEVELOPMENT</p>
-              <h2 id="course-dialog-title">Introduction to ADDIE</h2>
+              <p class="eyebrow" id="course-dialog-eyebrow">
+                INTERACTIVE COURSE
+              </p>
+              <h2 id="course-dialog-title">Course Preview</h2>
             </div>
             <button
               class="dialog-close"
@@ -392,17 +512,13 @@
           <div class="course-frame-wrap">
             <iframe
               id="course-frame"
-              title="Introduction to ADDIE course"
+              title="Interactive course preview"
               allow="fullscreen"
               loading="lazy"
             ></iframe>
           </div>
           <div class="dialog-footer">
-            <p>
-              This course is in active development: certain features and
-              functionalities may not work properly. Please utilize the course
-              Menu to navigate if needed.
-            </p>
+            <p id="course-dialog-note">Course preview.</p>
             <a
               class="btn primary track-click"
               data-track="launch_course_modal"
@@ -483,30 +599,111 @@
         </div>
       </dialog>
 
-      <dialog class="portfolio-dialog case-study-dialog" id="case-study-dialog" aria-labelledby="case-study-dialog-title">
+      <dialog
+        class="portfolio-dialog case-study-dialog"
+        id="case-study-dialog"
+        aria-labelledby="case-study-dialog-title"
+      >
         <div class="dialog-shell case-study-dialog-shell">
           <div class="dialog-head case-study-dialog-head">
-            <div><p class="eyebrow" id="case-study-dialog-eyebrow">CASE STUDY</p><h2 id="case-study-dialog-title">Case Study</h2><p class="case-study-dialog-subtitle" id="case-study-dialog-subtitle"></p></div>
-            <button class="dialog-close" type="button" data-close-dialog aria-label="Close case study">×</button>
+            <div>
+              <p class="eyebrow" id="case-study-dialog-eyebrow">CASE STUDY</p>
+              <h2 id="case-study-dialog-title">Case Study</h2>
+              <p
+                class="case-study-dialog-subtitle"
+                id="case-study-dialog-subtitle"
+              ></p>
+            </div>
+            <button
+              class="dialog-close"
+              type="button"
+              data-close-dialog
+              aria-label="Close case study"
+            >
+              ×
+            </button>
           </div>
           <div class="case-study-dialog-body">
             <div class="case-study-viewer">
               <div class="case-study-stage">
-                <button class="case-study-page-nav case-study-page-prev" id="case-study-page-prev" type="button" aria-label="Previous page">‹</button>
+                <button
+                  class="case-study-page-nav case-study-page-prev"
+                  id="case-study-page-prev"
+                  type="button"
+                  aria-label="Previous page"
+                >
+                  ‹
+                </button>
                 <img id="case-study-main-image" src="" alt="" />
-                <button class="case-study-page-nav case-study-page-next" id="case-study-page-next" type="button" aria-label="Next page">›</button>
-                <span class="case-study-page-counter" id="case-study-page-counter" aria-live="polite"></span>
+                <button
+                  class="case-study-page-nav case-study-page-next"
+                  id="case-study-page-next"
+                  type="button"
+                  aria-label="Next page"
+                >
+                  ›
+                </button>
+                <span
+                  class="case-study-page-counter"
+                  id="case-study-page-counter"
+                  aria-live="polite"
+                ></span>
               </div>
-              <div class="case-study-document-rail" id="case-study-document-rail" aria-label="Case study documents"></div>
+              <div
+                class="case-study-document-rail"
+                id="case-study-document-rail"
+                aria-label="Case study documents"
+              ></div>
             </div>
             <aside class="case-study-detail">
-              <div class="case-study-document-heading"><p class="eyebrow" id="case-study-document-phase"></p><h3 id="case-study-document-title"></h3><span class="case-study-file-type" id="case-study-file-type"></span></div>
-              <div class="case-study-meta-block"><span class="case-study-meta-label">DOCUMENT OVERVIEW</span><p id="case-study-document-overview"></p></div>
-              <div class="case-study-meta-block"><span class="case-study-meta-label">DESIGN DECISION</span><p id="case-study-design-decision"></p></div>
-              <div class="case-study-meta-block"><span class="case-study-meta-label">INSTRUCTIONAL DESIGN FRAMEWORKS USED</span><div class="tags case-study-meta-tags" id="case-study-frameworks"></div></div>
-              <div class="case-study-meta-block"><span class="case-study-meta-label">TOOLS</span><div class="tags case-study-meta-tags" id="case-study-tools"></div></div>
-              <div class="case-study-meta-block"><span class="case-study-meta-label">AI UTILIZED?</span><p class="case-study-ai-answer" id="case-study-ai-answer"></p><p class="case-study-ai-description" id="case-study-ai-description"></p></div>
-              <a class="btn secondary case-study-source-link" id="case-study-source-link" href="#" target="_blank" rel="noopener">View Original Document</a>
+              <div class="case-study-document-heading">
+                <p class="eyebrow" id="case-study-document-phase"></p>
+                <h3 id="case-study-document-title"></h3>
+                <span
+                  class="case-study-file-type"
+                  id="case-study-file-type"
+                ></span>
+              </div>
+              <div class="case-study-meta-block">
+                <span class="case-study-meta-label">DOCUMENT OVERVIEW</span>
+                <p id="case-study-document-overview"></p>
+              </div>
+              <div class="case-study-meta-block">
+                <span class="case-study-meta-label">DESIGN DECISION</span>
+                <p id="case-study-design-decision"></p>
+              </div>
+              <div class="case-study-meta-block">
+                <span class="case-study-meta-label"
+                  >INSTRUCTIONAL DESIGN FRAMEWORKS USED</span
+                >
+                <div
+                  class="tags case-study-meta-tags"
+                  id="case-study-frameworks"
+                ></div>
+              </div>
+              <div class="case-study-meta-block">
+                <span class="case-study-meta-label">TOOLS</span>
+                <div
+                  class="tags case-study-meta-tags"
+                  id="case-study-tools"
+                ></div>
+              </div>
+              <div class="case-study-meta-block">
+                <span class="case-study-meta-label">AI UTILIZED?</span>
+                <p class="case-study-ai-answer" id="case-study-ai-answer"></p>
+                <p
+                  class="case-study-ai-description"
+                  id="case-study-ai-description"
+                ></p>
+              </div>
+              <a
+                class="btn secondary case-study-source-link"
+                id="case-study-source-link"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                >View Original Document</a
+              >
             </aside>
           </div>
         </div>

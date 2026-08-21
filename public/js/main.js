@@ -15,11 +15,86 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 // =========================================
 // Selected Work filters
 // =========================================
-const workMessages={course:{title:"Completed interactive courses will appear here.",copy:"Future completed Storyline and other interactive learning experiences will be added to this collection."},video:{title:"Video & Animation is being prepared.",copy:"Vyond animation, instructional video, and other multimedia examples will populate this collection as they are completed."},document:{title:"Content & Design Documents are being prepared.",copy:"Storyboards, guides, planning artifacts, performance-support resources, and other instructional design documents will populate this collection."}};
-const designGalleryItems=Array.isArray(window.designGalleryItems)?window.designGalleryItems:[];
-const workEmptyState=document.getElementById("work-empty-state"),workEmptyTitle=document.getElementById("work-empty-title"),workEmptyCopy=document.getElementById("work-empty-copy"),designGalleryGrid=document.getElementById("design-gallery"),caseStudyGrid=document.getElementById("case-study-grid"),priorWorkDisclaimer=document.getElementById("prior-work-disclaimer"),caseStudyDisclaimer=document.getElementById("case-study-disclaimer");
-function setWorkView(filter){const showCaseStudies=filter==="case-study"||filter==="all",showGallery=filter==="gallery"||filter==="all",hasVisibleWork=showCaseStudies||showGallery;if(caseStudyGrid)caseStudyGrid.hidden=!showCaseStudies;if(designGalleryGrid)designGalleryGrid.hidden=!showGallery;if(workEmptyState)workEmptyState.hidden=hasVisibleWork;if(!hasVisibleWork&&workMessages[filter]){if(workEmptyTitle)workEmptyTitle.textContent=workMessages[filter].title;if(workEmptyCopy)workEmptyCopy.textContent=workMessages[filter].copy;}if(priorWorkDisclaimer)priorWorkDisclaimer.hidden=!showGallery;if(caseStudyDisclaimer)caseStudyDisclaimer.hidden=filter!=="case-study";}
-document.querySelectorAll("[data-work-filter]").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll("[data-work-filter]").forEach(item=>item.classList.remove("active"));button.classList.add("active");setWorkView(button.dataset.workFilter);}));
+const workMessages = {
+  video: {
+    title: "Video & Animation is being prepared.",
+    copy: "Vyond animation, instructional video, and other multimedia examples will populate this collection as they are completed."
+  },
+  document: {
+    title: "Content & Design Documents are being prepared.",
+    copy: "Storyboards, guides, planning artifacts, performance-support resources, and other instructional design documents will populate this collection."
+  }
+};
+
+const designGalleryItems = Array.isArray(window.designGalleryItems)
+  ? window.designGalleryItems
+  : [];
+
+const workEmptyState = document.getElementById("work-empty-state");
+const workEmptyTitle = document.getElementById("work-empty-title");
+const workEmptyCopy = document.getElementById("work-empty-copy");
+const designGalleryGrid = document.getElementById("design-gallery");
+const caseStudyGrid = document.getElementById("case-study-grid");
+const interactiveCourseGrid = document.getElementById("interactive-course-grid");
+const priorWorkDisclaimer = document.getElementById("prior-work-disclaimer");
+const caseStudyDisclaimer = document.getElementById("case-study-disclaimer");
+
+function setWorkView(filter) {
+  const showCaseStudies = filter === "case-study" || filter === "all";
+  const showCourses = filter === "course" || filter === "all";
+  const showGallery = filter === "gallery" || filter === "all";
+
+  const hasVisibleWork =
+    showCaseStudies ||
+    showCourses ||
+    showGallery;
+
+  if (caseStudyGrid) {
+    caseStudyGrid.hidden = !showCaseStudies;
+  }
+
+  if (interactiveCourseGrid) {
+    interactiveCourseGrid.hidden = !showCourses;
+  }
+
+  if (designGalleryGrid) {
+    designGalleryGrid.hidden = !showGallery;
+  }
+
+  if (workEmptyState) {
+    workEmptyState.hidden = hasVisibleWork;
+  }
+
+  if (!hasVisibleWork && workMessages[filter]) {
+    if (workEmptyTitle) {
+      workEmptyTitle.textContent = workMessages[filter].title;
+    }
+
+    if (workEmptyCopy) {
+      workEmptyCopy.textContent = workMessages[filter].copy;
+    }
+  }
+
+  if (priorWorkDisclaimer) {
+    priorWorkDisclaimer.hidden = !showGallery;
+  }
+
+  if (caseStudyDisclaimer) {
+    caseStudyDisclaimer.hidden = filter !== "case-study";
+  }
+}
+
+document.querySelectorAll("[data-work-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    document
+      .querySelectorAll("[data-work-filter]")
+      .forEach((item) => item.classList.remove("active"));
+
+    button.classList.add("active");
+    setWorkView(button.dataset.workFilter);
+  });
+});
+
 // =========================================
 // Optional click tracking
 // =========================================
@@ -38,34 +113,60 @@ document.querySelectorAll(".track-click").forEach((link) => {
 });
 
 // =========================================
-// Embedded course lightbox
+// Reusable embedded course lightbox
 // =========================================
 
-const launchCourse = document.getElementById("launch-course");
-const viewCourseButton = document.getElementById("view-course-here");
 const courseDialog = document.getElementById("course-dialog");
+const courseDialogEyebrow = document.getElementById("course-dialog-eyebrow");
+const courseDialogTitle = document.getElementById("course-dialog-title");
+const courseDialogNote = document.getElementById("course-dialog-note");
 const courseFrame = document.getElementById("course-frame");
 const modalLaunchCourse = document.getElementById("course-new-window");
 
-if (launchCourse && viewCourseButton && courseDialog && courseFrame) {
-  const courseUrl = launchCourse.href;
+document.querySelectorAll("[data-course-preview]").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!courseDialog || !courseFrame) return;
 
-  if (modalLaunchCourse) {
-    modalLaunchCourse.href = courseUrl;
-  }
+    const courseUrl = button.dataset.courseUrl || "";
+    const courseTitle = button.dataset.courseTitle || "Interactive Course";
+    const courseEyebrow = button.dataset.courseEyebrow || "INTERACTIVE COURSE";
+    const courseNote = button.dataset.courseNote || "";
 
-  viewCourseButton.addEventListener("click", () => {
+    if (!courseUrl) return;
+
+    if (courseDialogEyebrow) {
+      courseDialogEyebrow.textContent = courseEyebrow;
+    }
+
+    if (courseDialogTitle) {
+      courseDialogTitle.textContent = courseTitle;
+    }
+
+    if (courseDialogNote) {
+      courseDialogNote.textContent = courseNote;
+      courseDialogNote.hidden = !courseNote;
+    }
+
+    if (modalLaunchCourse) {
+      modalLaunchCourse.href = courseUrl;
+    }
+
+    courseFrame.title = `${courseTitle} course`;
     courseFrame.src = courseUrl;
+
     courseDialog.showModal();
 
     if (window.zaraz && typeof window.zaraz.track === "function") {
       window.zaraz.track("portfolio_click", {
         action: "view_course_here",
-        destination: courseUrl
+        destination: courseUrl,
+        course: courseTitle
       });
     }
   });
+});
 
+if (courseDialog && courseFrame) {
   courseDialog.addEventListener("close", () => {
     courseFrame.removeAttribute("src");
   });

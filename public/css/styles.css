@@ -2005,3 +2005,116 @@ footer {
   height: 0;
 }
 
+
+
+
+/* =========================================
+   10D. INTERACTIVE COURSE SHOWCASE
+   ========================================= */
+
+.course-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.course-showcase-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(201, 161, 74, 0.25);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #10243b 0%, #0b1827 100%);
+  box-shadow:
+    0 0 0 1px rgba(201, 161, 74, 0.04),
+    0 0 30px rgba(201, 161, 74, 0.075),
+    0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.course-showcase-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050d16;
+  border-bottom: 1px solid var(--border);
+}
+
+.course-showcase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-showcase-type {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(226, 196, 117, 0.38);
+  border-radius: 999px;
+  background: rgba(6, 20, 37, 0.92);
+  color: var(--gold2);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.course-showcase-copy {
+  padding: 28px 30px 30px;
+}
+
+.course-showcase-copy .eyebrow {
+  margin: 0;
+}
+
+.course-showcase-copy h3 {
+  margin: 10px 0 0;
+  font-size: 1.7rem;
+  font-weight: 430;
+  line-height: 1.2;
+}
+
+.course-showcase-copy > p:not(.eyebrow) {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.course-showcase-tags {
+  margin-top: 18px;
+}
+
+.course-showcase-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.course-showcase-actions .btn {
+  flex: 1 1 190px;
+}
+
+@media (max-width: 1050px) {
+  .course-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .course-showcase-copy {
+    padding: 22px 22px 24px;
+  }
+
+  .course-showcase-copy h3 {
+    font-size: 1.45rem;
+  }
+
+  .course-showcase-actions {
+    flex-direction: column;
+  }
+
+  .course-showcase-actions .btn {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
