@@ -6,10 +6,10 @@ window.caseStudyItems = [
   {
     id: "northstar-flexline-product-launch",
     eyebrow: "CASE STUDY · PRODUCT ENABLEMENT",
-    title: "Preparing CX Team for New Product Launch",
+    title: "Preparing Customer Experience for a New Product Launch",
     organization: "Northstar Business Finance",
     shortDescription:
-      "A fictionalized financial-services case study demonstrating training needs analysis, learning design, scenario development, performance support, and overall lesson planning.",
+      "A fictionalized financial-services case study demonstrating training needs analysis, learning design, scenario development, performance support, and overall learning-solution planning.",
     thumbnail:
       "/assets/case-studies/northstar-flexline-product-launch/thumb.png",
     tags: ["Needs Analysis", "Multimedia", "eLearning", "Performance Support"],
@@ -24,7 +24,7 @@ window.caseStudyItems = [
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/00-source-materials/01-case-study-scenario/preview/thumb.png",
         overview:
-          "The background, business need, and learning need supplied as the starting point for training request.",
+          "The background, business need, and learning need supplied as the starting point for the training request.",
         designDecision: "",
         frameworks: [],
         tools: [],
@@ -102,7 +102,7 @@ window.caseStudyItems = [
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/00-source-materials/04-stakeholder-email/preview/thumb.png",
         overview:
-          "The stakeholder request defining the audience, constraints, coursework requirements, and go-live timeline.",
+          "The stakeholder request defining the audience, constraints, coursework requirements, and launch timeline.",
         designDecision: "",
         frameworks: [],
         tools: [],
@@ -128,7 +128,7 @@ window.caseStudyItems = [
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/01-analyze/01-training-needs-analysis/preview/thumb.png",
         overview:
-          "My initial analysis of the root problem, business need, audience, timeline & constraints, anticipated success metrics, and deliverables. Once I understand the root problem and desired results, I refer to Bloom's for assistnace in creating measurable Learning Objectives.",
+          "My initial analysis of the root problem, business need, audience, timeline & constraints, anticipated success metrics, and deliverables. Once I understand the root problem and desired results, I refer to Bloom's for assistance in creating measurable learning objectives.",
         designDecision:
           "Before committing to modalities or development choices, I like to define the scope of the project, measurable learning objectives, assessment or tracking requirements, and what success will look like after completion. I typically inquire about and identify the answers to all of these questions during my initial Kickoff Meeting with my client or stakeholder.",
         frameworks: [
@@ -162,9 +162,9 @@ window.caseStudyItems = [
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/01-analyze/02-content-gap-analysis/preview/thumb.png",
         overview:
-          "A comparison of supplied content against the knowledge and behaviors required for confident and accurate customer expectations.",
+          "A comparison of supplied content against the knowledge and behaviors required for confident and accurate customer conversations.",
         designDecision:
-          "Using the Learning Objectives as my guide and compass, I comb over the provided content to identify gaps, risks, and recommended follow-ups. I then consolidate my findings to be shared with stakeholders for review and approval. When content approval is granted, I organize the Content Outline in a scaffolding fashion.",
+          "Using the learning objectives as my guide and compass, I comb over the provided content to identify gaps, risks, and recommended follow-ups. I then consolidate my findings to be shared with stakeholders for review and approval. When content approval is granted, I organize the content outline using a scaffolded sequence.",
         frameworks: ["ADDIE", "Gap Analysis", "Chunking"],
         tools: [],
         ai: {
@@ -194,8 +194,8 @@ window.caseStudyItems = [
         overview:
           "A scene-by-scene design document for the animated opener video that grabs learner attention and establishes the new product by illustrating potential customer concerns and the need for agent readiness.",
         designDecision:
-          "With basic andragogy principles in mind, I begin my design with determining how I can present an applicable and relevant problem to the learners so that they can relate and become self-invested into the following content.",
-        frameworks: ["ADDIE", "Gagne's Nine Events", "Meyer's 12 Principles"],
+          "With basic andragogy principles in mind, I begin my design with determining how I can present an applicable and relatable problem to the learners so that they can relate and become invested in the content that follows.",
+        frameworks: ["ADDIE", "Gagné's Nine Events of Instruction", "Mayer's 12 Principles of Multimedia Learning"],
         tools: ["Microsoft Word", "Vyond", "Articulate Storyline 360"],
         ai: {
           used: true,
@@ -233,13 +233,13 @@ window.caseStudyItems = [
         overview:
           "A granular slide-by-slide storyboard illustrating course and content flow, slide text and visual treatment, anticipated interactions, and planned use of assessment with associated feedback messaging. I also include brief notes of slide functionality and intent.",
         designDecision:
-          "In order to satisfy the singular independent course requirement that can apply to a dual audience, I chose to utilize a dual-branching eLearning course. The course is designed to pull learner data from the LMS to identifty current role. Once the role is defined, the course will automatically advance accordingly: new-hire agents will view all content while tenured agents will skip the foundational loan content and be directed straight to the new product information.",
+          "In order to satisfy the singular independent course requirement that can apply to a dual audience, I chose to utilize a dual-branching eLearning course. The course is designed to pull learner data from the LMS to identify the learner's current role. Once the role is defined, the course will automatically advance accordingly: new-hire agents will view all content while tenured agents will skip the foundational loan content and be directed straight to the new product information.",
         frameworks: [
           "ADDIE",
           "Chunking",
-          "Gagne's Nine Events",
-          "Meyer's 12 Principles",
-          "Cognitive Overload",
+          "Gagné's Nine Events of Instruction",
+          "Mayer's 12 Principles of Multimedia Learning",
+          "Cognitive Load Theory",
           "Scenario-Based Learning",
         ],
         tools: ["Microsoft Word", "Articulate Storyline 360"],
@@ -283,7 +283,7 @@ window.caseStudyItems = [
           "A two-page performance-support resource designed for quick reference during live customer conversations.",
         designDecision:
           "With the understanding and belief that learners will not typically refer back to a full eLearning course after completion, I wanted to provide a quick-reference resource that can be printed or accessed online during live customer conversations.",
-        frameworks: ["Performance Support", "Retain & Transfer"],
+        frameworks: ["Performance Support", "Retention & Transfer"],
         tools: ["PDF", "Generative AI"],
         ai: {
           used: true,
