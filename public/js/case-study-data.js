@@ -6,7 +6,7 @@ window.caseStudyItems = [
   {
     id: "northstar-flexline-product-launch",
     eyebrow: "CASE STUDY · PRODUCT ENABLEMENT",
-    title: "Preparing Customer Experience for a New Product Launch",
+    title: "Preparing CX Team for New Product Launch",
     organization: "Northstar Business Finance",
     shortDescription:
       "A fictionalized financial-services case study demonstrating training needs analysis, learning design, scenario development, performance support, and overall lesson planning.",
@@ -102,7 +102,7 @@ window.caseStudyItems = [
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/00-source-materials/04-stakeholder-email/preview/thumb.png",
         overview:
-          "The stakeholder request defining the audience, constraints, coursework requirements, and launch timeline.",
+          "The stakeholder request defining the audience, constraints, coursework requirements, and go-live timeline.",
         designDecision: "",
         frameworks: [],
         tools: [],
@@ -185,16 +185,16 @@ window.caseStudyItems = [
       {
         id: "scenario-video-storyboard",
         phase: "Design",
-        title: "Aniamted Video Storyboard",
+        title: "Animated Video Storyboard",
         fileType: "Microsoft Word",
         sourceFile:
           "/assets/case-studies/northstar-flexline-product-launch/02-design/01-scenario-video-storyboard/scenario-video-storyboard.docx",
         thumbnail:
           "/assets/case-studies/northstar-flexline-product-launch/02-design/01-scenario-video-storyboard/preview/thumb.png",
         overview:
-          "A scene-by-scene design document for the animated opener video that grabs learner attention and establishes the new product by illustrateing potential customer concerns and the need for agent readiness.",
+          "A scene-by-scene design document for the animated opener video that grabs learner attention and establishes the new product by illustrating potential customer concerns and the need for agent readiness.",
         designDecision:
-          "With basic andragogy principles in mind, I begin my design with determining how I can present an applicable and relatable problem to the learners so that they can relate and become self-invested into the following content.",
+          "With basic andragogy principles in mind, I begin my design with determining how I can present an applicable and relevant problem to the learners so that they can relate and become self-invested into the following content.",
         frameworks: ["ADDIE", "Gagne's Nine Events", "Meyer's 12 Principles"],
         tools: ["Microsoft Word", "Vyond", "Articulate Storyline 360"],
         ai: {
