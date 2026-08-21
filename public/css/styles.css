@@ -1830,6 +1830,20 @@ footer {
     margin-top: 28px;
   }
 
+
+  /* Active Development status pill — reserve its own bottom row.
+     The badge remains anchored lower-left, but the project copy now leaves
+     enough vertical space below the CTAs so it cannot overlap them. */
+  #active .project-copy {
+    padding-bottom: 92px;
+  }
+
+  #active .badge {
+    left: 28px;
+    bottom: 24px;
+    margin-top: 0;
+  }
+
   /* Final mobile density refinements */
   .badge {
     width: fit-content;
@@ -1865,6 +1879,17 @@ footer {
   #work .filters button {
     padding: 10px 16px;
   }
+
+
+  #active .project-copy {
+    padding-bottom: 88px;
+  }
+
+  #active .badge {
+    left: 22px;
+    bottom: 22px;
+  }
+
 
   .case-study-card-image {
     aspect-ratio: 16 / 9;
