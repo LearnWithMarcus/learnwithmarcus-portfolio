@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LearnWithMarcus — Live Portfolio Embed</title>
+    <style>
+      :root {
+        --navy: #081a2f;
+        --navy2: #10243b;
+        --black: #0d141d;
+        --gold: #c9a14a;
+        --gold2: #e2c475;
+        --white: #f7f8fa;
+        --muted: #a9b3bf;
+        --border: rgba(255, 255, 255, 0.1);
+        --gb: rgba(201, 161, 74, 0.34);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: var(--navy);
+        color: var(--white);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px 64px;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 720px;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      /* ---- Live proof strip ---- */
+      .live-strip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+        padding: 9px 12px;
+        border: 1px solid var(--gb);
+        border-radius: 999px;
+        background: rgba(6, 20, 37, 0.94);
+        color: var(--gold2);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: fadeIn 300ms ease-out 0ms forwards;
+      }
+
+      .live-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      #live-clock {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ---- Hero ---- */
+      .hero {
+        opacity: 0;
+        animation: fadeUp 350ms ease-out 100ms forwards;
+      }
+
+      .hero-eyebrow {
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.7rem, 4.4vw, 2.5rem);
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+        color: var(--white);
+      }
+
+      .hero h1 .accent {
+        color: var(--gold2);
+        font-weight: 500;
+      }
+
+      .hero p.sub {
+        margin-top: 16px;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #cfd5dc;
+        max-width: 58ch;
+      }
+
+      /* ---- Verify CTA with rotating glow ---- */
+      .verify-block {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        opacity: 0;
+        animation: fadeUp 350ms ease-out 150ms forwards;
+      }
+
+      .verify-wrap {
+        position: relative;
+        display: inline-flex;
+      }
+
+      .verify-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -6px;
+        border-radius: 14px;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          var(--gold2) 30%,
+          transparent 55%
+        );
+        filter: blur(10px);
+        opacity: 0.65;
+        z-index: 0;
+        pointer-events: none;
+        animation: glow-spin 4s linear infinite;
+      }
+
+      .verify-wrap.confirmed::before {
+        animation-play-state: paused;
+        opacity: 0.2;
+      }
+
+      .verify-btn {
+        position: relative;
+        z-index: 1;
+        min-height: 48px;
+        padding: 0 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid var(--gold);
+        background: var(--gold);
+        color: #101722;
+        font: inherit;
+        font-weight: 700;
+        font-size: 0.92rem;
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          background-color 0.18s ease,
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
+      }
+
+      .verify-btn:hover {
+        transform: translateY(-2px);
+        background: var(--gold2);
+        border-color: var(--gold2);
+        box-shadow: 0 7px 22px rgba(201, 161, 74, 0.16);
+      }
+
+      .verify-btn[data-confirmed="true"] {
+        background: rgba(201, 161, 74, 0.08);
+        border-color: rgba(226, 196, 117, 0.4);
+        color: var(--gold2);
+        cursor: default;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .verify-result {
+        font-size: 0.85rem;
+        color: var(--muted);
+        min-height: 1.2em;
+        opacity: 0;
+        transition: opacity 200ms ease;
+      }
+
+      .verify-result.show {
+        opacity: 1;
+        color: var(--gold2);
+      }
+
+      .verify-result .checkmark {
+        color: var(--gold);
+        margin-right: 6px;
+      }
+
+      /* ---- Stats (matches .stats pattern) ---- */
+      .stats {
+        width: 100%;
+        padding-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        border-top: 1px solid var(--border);
+        opacity: 0;
+        animation: fadeUp 350ms ease-out 200ms forwards;
+      }
+
+      .stats strong {
+        display: block;
+        color: var(--gold2);
+        font-size: 2rem;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+
+      .stats span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      /* ---- Project card (matches .course-showcase-card pattern) ---- */
+      .course-showcase-card {
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(201, 161, 74, 0.25);
+        border-radius: 16px;
+        background: linear-gradient(145deg, #10243b 0%, #0b1827 100%);
+        box-shadow:
+          0 0 0 1px rgba(201, 161, 74, 0.04),
+          0 0 30px rgba(201, 161, 74, 0.075),
+          0 18px 40px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: fadeUp 350ms ease-out 300ms forwards;
+      }
+
+      .course-showcase-image {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #050d16;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .course-showcase-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .course-showcase-type {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        padding: 7px 10px;
+        border: 1px solid rgba(226, 196, 117, 0.38);
+        border-radius: 999px;
+        background: rgba(6, 20, 37, 0.92);
+        color: var(--gold2);
+        font-size: 0.7rem;
+        font-weight: 800;
+      }
+
+      .course-showcase-copy {
+        padding: 28px 30px 30px;
+      }
+
+      .course-showcase-copy .eyebrow {
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .course-showcase-copy h3 {
+        margin: 10px 0 0;
+        font-size: 1.6rem;
+        font-weight: 430;
+        line-height: 1.2;
+        color: var(--white);
+      }
+
+      .course-showcase-copy p.desc {
+        margin: 14px 0 0;
+        color: var(--muted);
+        line-height: 1.62;
+        font-size: 0.92rem;
+      }
+
+      .course-showcase-actions {
+        margin-top: 24px;
+      }
+
+      .btn-static {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 8px;
+        border: 1px solid rgba(226, 196, 117, 0.62);
+        background: rgba(201, 161, 74, 0.08);
+        color: #f2d889;
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: default;
+      }
+
+      /* ---- Footer ---- */
+      .footer-line {
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--muted);
+        opacity: 0;
+        animation: fadeIn 300ms ease-out 450ms forwards;
+      }
+
+      .footer-line a {
+        color: var(--gold2);
+        text-decoration: none;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.35;
+        }
+      }
+      @keyframes glow-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="live-strip">
+        <span class="live-dot"></span>
+        <span>Live &middot;</span>
+        <span id="live-clock">--:--:--</span>
+      </div>
+
+      <div class="hero">
+        <div class="hero-eyebrow">Recursion Demo</div>
+        <h1>
+          You're looking at <span class="accent">learnwithmarcus.com</span> —
+          rendered live, from inside a course built in Articulate Storyline,
+          hosted on <span class="accent">learnwithmarcus.com</span>.
+        </h1>
+        <p class="sub">
+          This isn't a screenshot. The clock above is ticking in real time
+          because this is a live web object pulling directly from the same
+          Cloudflare-hosted site you'd visit in a browser.
+        </p>
+      </div>
+
+      <div class="verify-block">
+        <div class="verify-wrap" id="verify-wrap">
+          <button class="verify-btn" id="verify-btn" onclick="verifyClick()">
+            Tap to verify this is live
+          </button>
+        </div>
+        <div class="verify-result" id="verify-result">
+          <span class="checkmark">&#10003;</span><span id="verify-text"></span>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div>
+          <strong>12+</strong>
+          <span>Years in Learning &amp; Development</span>
+        </div>
+        <div>
+          <strong>10+</strong>
+          <span>Business Units Supported</span>
+        </div>
+        <div>
+          <strong>10,000+</strong>
+          <span>Learners Supported</span>
+        </div>
+      </div>
+
+      <div class="course-showcase-card">
+        <div class="course-showcase-image">
+          <img
+            src="https://learnwithmarcus.com/assets/images/projects/intro-to-addie-thumbnail.png"
+            alt="Introduction to ADDIE course thumbnail"
+          />
+          <span class="course-showcase-type">Active Development</span>
+        </div>
+        <div class="course-showcase-copy">
+          <p class="eyebrow">In Active Development</p>
+          <h3>Introduction to ADDIE</h3>
+          <p class="desc">
+            A practical, iterative walkthrough of the ADDIE framework —
+            stakeholder scenarios, needs analysis, measurable objectives, and
+            knowledge checks, built the same way this demo was.
+          </p>
+          <div class="course-showcase-actions">
+            <span class="btn-static"
+              >View full course on learnwithmarcus.com</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-line">
+        Marcus Johnson · Learning Experience Designer &nbsp;·&nbsp;
+        <a href="https://learnwithmarcus.com" target="_blank" rel="noopener"
+          >learnwithmarcus.com</a
+        >
+      </div>
+    </div>
+
+    <script>
+      function tick() {
+        var now = new Date();
+        var h = String(now.getHours()).padStart(2, "0");
+        var m = String(now.getMinutes()).padStart(2, "0");
+        var s = String(now.getSeconds()).padStart(2, "0");
+        document.getElementById("live-clock").textContent =
+          h + ":" + m + ":" + s;
+      }
+      tick();
+      setInterval(tick, 1000);
+
+      function verifyClick() {
+        var now = new Date();
+        var h = String(now.getHours()).padStart(2, "0");
+        var m = String(now.getMinutes()).padStart(2, "0");
+        var s = String(now.getSeconds()).padStart(2, "0");
+        var stamp = h + ":" + m + ":" + s;
+
+        var wrap = document.getElementById("verify-wrap");
+        var btn = document.getElementById("verify-btn");
+        var result = document.getElementById("verify-result");
+        var text = document.getElementById("verify-text");
+
+        text.textContent =
+          "Confirmed live at " +
+          stamp +
+          " — your click reached learnwithmarcus.com.";
+        result.classList.add("show");
+        wrap.classList.add("confirmed");
+        btn.textContent = "Verified";
+        btn.setAttribute("data-confirmed", "true");
+        btn.disabled = true;
+      }
+    </script>
+  </body>
+</html>
