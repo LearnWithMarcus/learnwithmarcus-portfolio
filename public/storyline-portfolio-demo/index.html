@@ -8,7 +8,7 @@
       content="Marcus Johnson — Instructional Designer."
     />
     <meta name="theme-color" content="#081A2F" />
-    <title>Marcus Johnson | Learning Experience Designer</title>
+    <title>Marcus Johnson | Instructional Designer</title>
     <link
       rel="icon"
       href="/assets/images/branding/marcus-johnson-logo-symbol.png"
@@ -46,7 +46,23 @@
         font-variant-numeric: tabular-nums;
       }
 
+      /* Keep the longer demo headline compact so the hero retains its normal proportions. */
+      .hero .hero-grid {
+        align-items: center;
+      }
+
+      .hero .hero-grid > div > h1 {
+        font-size: clamp(2.25rem, 3.8vw, 4.35rem);
+        line-height: 1.07;
+        letter-spacing: -0.025em;
+      }
+
       .portfolioception-card {
+        width: 100%;
+        max-width: 360px;
+        min-height: 0;
+        align-self: center;
+        justify-self: end;
         text-align: center;
         align-items: center;
       }
@@ -55,8 +71,8 @@
         margin-inline: auto;
       }
 
-      .portfolioception-card > p {
-        max-width: 38ch;
+      .portfolioception-card > h2 {
+        max-width: 13ch;
         margin-inline: auto;
       }
 
@@ -100,6 +116,13 @@
         transform: scale(0.94);
       }
 
+      #recursion-verify-btn {
+        width: auto;
+        min-width: max-content;
+        padding-inline: 22px;
+        white-space: nowrap;
+      }
+
       #recursion-verify-btn[data-confirmed="true"] {
         background: rgba(201, 161, 74, 0.08);
         border-color: rgba(226, 196, 117, 0.4);
@@ -111,10 +134,11 @@
 
       .recursion-result {
         min-height: 1.25em;
-        max-width: 40ch;
+        max-width: 34ch;
         margin: 0;
         color: var(--gold2);
-        font-size: 0.82rem;
+        font-size: 0.84rem;
+        font-weight: 700;
         line-height: 1.5;
         opacity: 0;
         transform: translateY(-3px);
@@ -147,6 +171,15 @@
         50% {
           opacity: 0.82;
           transform: scale(1.07);
+        }
+      }
+
+      @media (max-width: 520px) {
+        #recursion-verify-btn {
+          min-width: 0;
+          max-width: 100%;
+          font-size: 0.82rem;
+          padding-inline: 16px;
         }
       }
 
@@ -289,11 +322,6 @@
             />
             <p class="eyebrow">PORTFOLIOCEPTION</p>
             <h2>You’re inside the portfolio, inside the course.</h2>
-            <p>
-              This page is being rendered live from learnwithmarcus.com inside
-              the course itself. Click below for a timestamped proof that the
-              interaction is reaching the live site in real time.
-            </p>
 
             <div class="recursion-verify-block">
               <div class="recursion-verify-wrap" id="recursion-verify-wrap">
