@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="Marcus Johnson — Learning Experience Designer and Instructional Designer."
+      content="Marcus Johnson — Instructional Designer."
     />
     <meta name="theme-color" content="#081A2F" />
     <title>Marcus Johnson | Learning Experience Designer</title>
@@ -14,22 +14,14 @@
       href="/assets/images/branding/marcus-johnson-logo-symbol.png"
     />
     <link rel="stylesheet" href="/css/styles.css" />
-            <style>
-      .recursion-banner {
-        background: var(--black);
-        border-bottom: 1px solid var(--border);
-        padding: 14px max(24px, calc((100vw - var(--w)) / 2));
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 16px;
-      }
+    <style>
+      /* Portfolioception — live proof components */
       .recursion-live {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 9px 12px;
+        min-height: 48px;
+        padding: 0 16px;
         border: 1px solid var(--gb);
         border-radius: 999px;
         background: rgba(6, 20, 37, 0.94);
@@ -38,91 +30,138 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        white-space: nowrap;
       }
+
       .recursion-dot {
         width: 7px;
         height: 7px;
+        flex: 0 0 7px;
         border-radius: 50%;
         background: var(--gold);
         animation: recursion-pulse 2s ease-in-out infinite;
       }
+
       #recursion-clock {
         font-variant-numeric: tabular-nums;
       }
-      .recursion-verify-group {
-        display: flex;
+
+      .portfolioception-card {
+        text-align: center;
         align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
       }
-      .recursion-result {
-        font-size: 0.82rem;
+
+      .portfolioception-card > img {
+        margin-inline: auto;
+      }
+
+      .portfolioception-card > p {
+        max-width: 38ch;
+        margin-inline: auto;
+      }
+
+      .recursion-verify-block {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .recursion-verify-wrap {
+        position: relative;
+        display: inline-flex;
+        isolation: isolate;
+      }
+
+      .recursion-verify-wrap::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border-radius: 16px;
+        background: radial-gradient(
+          circle,
+          rgba(226, 196, 117, 0.48) 0%,
+          rgba(201, 161, 74, 0.22) 38%,
+          rgba(201, 161, 74, 0) 72%
+        );
+        filter: blur(8px);
+        opacity: 0.5;
+        transform: scale(0.94);
+        pointer-events: none;
+        z-index: -1;
+        animation: recursion-glow 2.6s ease-in-out infinite;
+      }
+
+      .recursion-verify-wrap.confirmed::before {
+        animation: none;
+        opacity: 0.12;
+        transform: scale(0.94);
+      }
+
+      #recursion-verify-btn[data-confirmed="true"] {
+        background: rgba(201, 161, 74, 0.08);
+        border-color: rgba(226, 196, 117, 0.4);
         color: var(--gold2);
-        display: none;
+        cursor: default;
+        transform: none;
+        box-shadow: none;
       }
+
+      .recursion-result {
+        min-height: 1.25em;
+        max-width: 40ch;
+        margin: 0;
+        color: var(--gold2);
+        font-size: 0.82rem;
+        line-height: 1.5;
+        opacity: 0;
+        transform: translateY(-3px);
+        transition:
+          opacity 220ms ease,
+          transform 220ms ease;
+      }
+
       .recursion-result.show {
-        display: inline;
+        opacity: 1;
+        transform: translateY(0);
       }
+
       @keyframes recursion-pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.35; }
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.35;
+        }
       }
-      @media (max-width: 720px) {
-        .recursion-banner {
-          flex-direction: column;
-          align-items: flex-start;
+
+      @keyframes recursion-glow {
+        0%,
+        100% {
+          opacity: 0.42;
+          transform: scale(0.94);
+        }
+        50% {
+          opacity: 0.82;
+          transform: scale(1.07);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .recursion-dot,
+        .recursion-verify-wrap::before {
+          animation: none;
+        }
+        .recursion-result {
+          transition: none;
         }
       }
     </style>
   </head>
   <body>
-      <body>
-    <div class="recursion-banner" id="recursion-banner">
-      <span class="recursion-live">
-        <span class="recursion-dot"></span>
-        Live &middot; <span id="recursion-clock">--:--:--</span>
-      </span>
-      <div class="recursion-verify-group">
-        <button
-          class="btn primary"
-          type="button"
-          id="recursion-verify-btn"
-          onclick="recursionVerify()"
-        >
-          Tap to verify this is live
-        </button>
-        <span class="recursion-result" id="recursion-result"></span>
-      </div>
-    </div>
-    <script>
-      function recursionTick() {
-        var now = new Date();
-        var h = String(now.getHours()).padStart(2, "0");
-        var m = String(now.getMinutes()).padStart(2, "0");
-        var s = String(now.getSeconds()).padStart(2, "0");
-        document.getElementById("recursion-clock").textContent =
-          h + ":" + m + ":" + s;
-      }
-      recursionTick();
-      setInterval(recursionTick, 1000);
-
-      function recursionVerify() {
-        var now = new Date();
-        var h = String(now.getHours()).padStart(2, "0");
-        var m = String(now.getMinutes()).padStart(2, "0");
-        var s = String(now.getSeconds()).padStart(2, "0");
-        var stamp = h + ":" + m + ":" + s;
-
-        var btn = document.getElementById("recursion-verify-btn");
-        var result = document.getElementById("recursion-result");
-
-        result.textContent =
-          "✓ Confirmed live at " + stamp + " — your click reached learnwithmarcus.com.";
-        result.classList.add("show");
-        btn.style.display = "none";
-      }
-    </script>
-
     <!-- =========================================================
          ACTIVE DEVELOPMENT — UPDATE HISTORY
          =========================================================
@@ -208,17 +247,23 @@
           <div>
             <p class="eyebrow">INSTRUCTIONAL DESIGNER • E-LEARNING DEVELOPER</p>
             <h1>
-              Learning should <span>solve problems,</span> not just deliver
-              information.
+              You're looking at
+              <span class="accent">learnwithmarcus.com</span> ... rendered live,
+              from inside a course built in Articulate Storyline... hosted on
+              <span class="accent">learnwithmarcus.com</span>.
             </h1>
             <p class="lede">
-              I design engaging, performance-driven learning experiences which
-              enable capability and help others grasp and retain complex theory
-              to perform with confidence.
+              This isn't a screenshot. The clock below is ticking in real time
+              because this is a live web object pulling directly from the same
+              Cloudflare-hosted site that you visited in your browser to access
+              this course.
             </p>
             <div class="actions">
               <a class="btn primary" href="#active">See What I'm Building</a>
-              <a class="btn secondary" href="#work">Explore My Work</a>
+              <span class="recursion-live" aria-label="Live local time">
+                <span class="recursion-dot" aria-hidden="true"></span>
+                Live &middot; <span id="recursion-clock">--:--:--</span>
+              </span>
             </div>
             <div class="stats">
               <div>
@@ -237,19 +282,36 @@
               </div>
             </div>
           </div>
-          <aside class="focus-card">
+          <aside class="focus-card portfolioception-card">
             <img
               src="/assets/images/branding/marcus-johnson-logo-symbol.png"
               alt=""
             />
-            <p class="eyebrow">DESIGN FOCUS</p>
-            <h2>Learning solutions geared towards results.</h2>
+            <p class="eyebrow">PORTFOLIOCEPTION</p>
+            <h2>You’re inside the portfolio, inside the course.</h2>
             <p>
-              I combine learner-centered design with thoughtful measurement,
-              reporting, and analytics to create learning experiences that
-              support performance and reveal where future improvements can make
-              the greatest impact.
+              This page is being rendered live from learnwithmarcus.com inside
+              the course itself. Click below for a timestamped proof that the
+              interaction is reaching the live site in real time.
             </p>
+
+            <div class="recursion-verify-block">
+              <div class="recursion-verify-wrap" id="recursion-verify-wrap">
+                <button
+                  class="btn primary"
+                  type="button"
+                  id="recursion-verify-btn"
+                  onclick="recursionVerify()"
+                >
+                  Click for real-time proof
+                </button>
+              </div>
+              <p
+                class="recursion-result"
+                id="recursion-result"
+                aria-live="polite"
+              ></p>
+            </div>
           </aside>
         </div>
       </section>
@@ -869,6 +931,45 @@
       if (latestCourseUpdate && activeDateElement) {
         activeDateElement.textContent = latestCourseUpdate.date;
       }
+    </script>
+    <script>
+      function recursionTick() {
+        var clock = document.getElementById("recursion-clock");
+        if (!clock) return;
+
+        var now = new Date();
+        var h = String(now.getHours()).padStart(2, "0");
+        var m = String(now.getMinutes()).padStart(2, "0");
+        var s = String(now.getSeconds()).padStart(2, "0");
+        clock.textContent = h + ":" + m + ":" + s;
+      }
+
+      function recursionVerify() {
+        var now = new Date();
+        var h = String(now.getHours()).padStart(2, "0");
+        var m = String(now.getMinutes()).padStart(2, "0");
+        var s = String(now.getSeconds()).padStart(2, "0");
+        var stamp = h + ":" + m + ":" + s;
+
+        var wrap = document.getElementById("recursion-verify-wrap");
+        var btn = document.getElementById("recursion-verify-btn");
+        var result = document.getElementById("recursion-result");
+
+        if (!wrap || !btn || !result) return;
+
+        result.textContent =
+          "✓ Confirmed live at " +
+          stamp +
+          " — your click reached learnwithmarcus.com.";
+        result.classList.add("show");
+        wrap.classList.add("confirmed");
+        btn.textContent = "Verified";
+        btn.setAttribute("data-confirmed", "true");
+        btn.disabled = true;
+      }
+
+      recursionTick();
+      setInterval(recursionTick, 1000);
     </script>
     <script src="/js/gallery-data.js"></script>
     <script src="/js/case-study-data.js"></script>
