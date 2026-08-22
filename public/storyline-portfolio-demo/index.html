@@ -127,26 +127,22 @@
       }
 
       .verify-wrap::before {
-        content: "";
-        position: absolute;
-        inset: -6px;
-        border-radius: 14px;
-        background: conic-gradient(
-          from 0deg,
-          transparent,
-          var(--gold2) 30%,
-          transparent 55%
-        );
-        filter: blur(10px);
-        opacity: 0.65;
-        z-index: 0;
-        pointer-events: none;
-        animation: glow-spin 4s linear infinite;
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 14px;
+    background: radial-gradient(circle, rgba(226, 196, 117, 0.55) 0%, rgba(226, 196, 117, 0) 70%);
+    filter: blur(6px);
+    opacity: 0.8;
+    z-index: 0;
+    pointer-events: none;
+    animation: glow-pulse 2.4s ease-in-out infinite;
       }
 
       .verify-wrap.confirmed::before {
-        animation-play-state: paused;
-        opacity: 0.2;
+    animation-play-state: paused;
+    opacity: 0.15;
+    transform: scale(0.92);
       }
 
       .verify-btn {
@@ -214,6 +210,8 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 28px;
         border-top: 1px solid var(--border);
+        text-align: center;
+        justify-items: center;
         opacity: 0;
         animation: fadeUp 350ms ease-out 200ms forwards;
       }
@@ -319,7 +317,15 @@
         color: #f2d889;
         font-weight: 700;
         font-size: 0.9rem;
-        cursor: default;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      }
+
+      .btn-static:hover {
+        background: rgba(226, 196, 117, 0.16);
+        border-color: var(--gold2);
+        color: var(--white);
       }
 
       /* ---- Footer ---- */
@@ -360,9 +366,9 @@
           opacity: 0.35;
         }
       }
-      @keyframes glow-spin {
-        to {
-          transform: rotate(360deg);
+      @keyframes glow-pulse {
+        0%, 100% { transform: scale(0.92); opacity: 0.55; }
+        50% { transform: scale(1.06); opacity: 0.9; }
         }
       }
     </style>
@@ -378,21 +384,21 @@
       <div class="hero">
         <div class="hero-eyebrow">Recursion Demo</div>
         <h1>
-          You're looking at <span class="accent">learnwithmarcus.com</span> —
-          rendered live, from inside a course built in Articulate Storyline,
+          You're looking at <span class="accent">learnwithmarcus.com</span> ...
+          rendered live, from inside a course built in Articulate Storyline...
           hosted on <span class="accent">learnwithmarcus.com</span>.
         </h1>
         <p class="sub">
           This isn't a screenshot. The clock above is ticking in real time
           because this is a live web object pulling directly from the same
-          Cloudflare-hosted site you'd visit in a browser.
+          Cloudflare-hosted site that you visited in your browser to access this course.
         </p>
       </div>
 
       <div class="verify-block">
         <div class="verify-wrap" id="verify-wrap">
           <button class="verify-btn" id="verify-btn" onclick="verifyClick()">
-            Tap to verify this is live
+            Click for real-time proof
           </button>
         </div>
         <div class="verify-result" id="verify-result">
@@ -433,8 +439,7 @@
           </p>
           <div class="course-showcase-actions">
             <span class="btn-static"
-              >View full course on learnwithmarcus.com</span
-            >
+          <a class="btn-static" href="https://courses.learnwithmarcus.com/intro-to-addie/story.html" target="_blank" rel="noopener">View full course on learnwithmarcus.com</a>
           </div>
         </div>
       </div>
